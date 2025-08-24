@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agence Événementielle</title>
+    <link rel="stylesheet" href="swipper-bundle.min.css" />
+    <link rel="stylesheet" href="newcss.css" />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
+  </head>
+
+  <body oncontextmenu="return false">
+    <header class="header" id="header">
+      <nav class="nav container">
+        <a href="#" class="nav__logo">Événementiel+</a>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list grid">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active-link">
+                <i class="uil uil-estate nav__icon"></i>Accueil
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">
+                <i class="uil uil-user nav__icon"></i>À propos
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#faq" class="nav__link">
+                <i class="uil uil-question-circle nav__icon"></i>FAQ
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">
+                <i class="uil uil-briefcase-alt nav__icon"></i>Services
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#portfolio" class="nav__link">
+                <i class="uil uil-scenery nav__icon"></i>Réalisations
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">
+                <i class="uil uil-message nav__icon"></i>Contact
+              </a>
+            </li>
+          </ul>
+          <i class="uil uil-times nav__close" id="nav-close"></i>
+        </div>
+        <div class="nav__btns">
+          <div class="nav__toggle" id="nav-toggle">
+            <i class="uil uil-apps"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!--========================= Accueil =====================-->
+      <section class="home section" id="home">
+        <div class="video-background">
+          <video autoplay muted loop id="bg-video">
+            <source src="assets/videos/event-background.mp4" type="video/mp4">
+            <img src="assets/img/event-fallback.jpg" alt="Background événementiel">
+          </video>
+          <div class="video-overlay"></div>
+        </div>
+        
+        <div class="home__container container grid">
+          <div class="home__content grid">
+            <div class="home__data">
+              <h1 class="home__title">Agence Événementielle Créative</h1>
+              <h3 class="home__subtitle">
+                Des expériences mémorables sur mesure
+              </h3>
+              <p class="home__description">
+                Nous transformons vos idées en événements exceptionnels avec innovation et passion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--======================= À propos ========================-->
+      <section class="about section" id="about">
+        <h2 class="section__title">À propos</h2>
+        <span class="section__subtitle">Notre agence</span>
+
+        <div class="about__container container grid">
+          <img src="assets\img\about.jpg" alt="" class="about__img" />
+
+          <div class="about__data">
+            <p class="about__description">
+              Fondée en 2010, notre agence événementielle allie créativité et expertise pour concevoir des expériences uniques. Notre équipe passionnée travaille sans relâche pour donner vie à vos projets les plus ambitieux.
+            </p>
+
+            <div class="about__info">
+              <div>
+                <span class="about__info-title">200+</span>
+                <span class="about__info-name">Événements <br />organisés</span>
+              </div>
+
+              <div>
+                <span class="about__info-title">50+</span>
+                <span class="about__info-name">Clients <br />satisfaits</span>
+              </div>
+
+              <div>
+                <span class="about__info-title">12</span>
+                <span class="about__info-name">Prix <br />remportés</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--===================== FAQ =====================-->
+      <section class="faq section" id="faq">
+        <h2 class="section__title">FAQ</h2>
+        <span class="section__subtitle">Questions fréquentes</span>
+
+        <div class="faq__container container grid">
+          <div>
+            <div class="faq__content faq__open">
+              <div class="faq__header">
+                <i class="fas fa-question-circle faq__icon"></i>
+                <div>
+                  <h1 class="faq__title">Organisation d'événements</h1>
+                </div>
+                <i class="uil uil-angle-down faq__arrow"></i>
+              </div>
+              
+              <div class="faq__list grid">
+                <div class="faq__data">
+                  <div class="faq__titles">
+                    <h3 class="faq__name">Quels types d'événements organisez-vous ?</h3>
+                  </div>
+                  <p class="faq__answer">Mariages, lancements produits, conférences, team building et plus encore.</p>
+                </div>
+                
+                <div class="faq__data">
+                  <div class="faq__titles">
+                    <h3 class="faq__name">Quel est votre délai minimum d'organisation ?</h3>
+                  </div>
+                  <p class="faq__answer">2 semaines pour les petits événements, 3 mois pour les grands projets.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq__content faq__close">
+              <div class="faq__header">
+                <i class="fas fa-euro-sign faq__icon"></i>
+                <div>
+                  <h1 class="faq__title">Budget et tarifs</h1>
+                </div>
+                <i class="uil uil-angle-down faq__arrow"></i>
+              </div>
+
+              <div class="faq__list grid">
+                <div class="faq__data">
+                  <div class="faq__titles">
+                    <h3 class="faq__name">Quel est votre budget minimum ?</h3>
+                  </div>
+                  <p class="faq__answer">À partir de 5 000€ pour un événement complet.</p>
+                </div>
+                <div class="faq__data">
+                  <div class="faq__titles">
+                    <h3 class="faq__name">Proposez-vous des forfaits ?</h3>
+                  </div>
+                  <p class="faq__answer">Oui, nous avons des solutions adaptées à chaque besoin.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="faq__content faq__close">
+              <div class="faq__header">
+                <i class="fas fa-lightbulb faq__icon"></i>
+                <div>
+                  <h1 class="faq__title">Innovation</h1>
+                </div>
+                <i class="uil uil-angle-down faq__arrow"></i>
+              </div>
+
+              <div class="faq__list grid">
+                <div class="faq__data">
+                  <div class="faq__titles">
+                    <h3 class="faq__name">Utilisez-vous des technologies innovantes ?</h3>
+                  </div>
+                  <p class="faq__answer">Réalité augmentée, mapping vidéo, solutions interactives.</p>
+                </div>
+                <div class="faq__data">
+                  <div class="faq__titles">
+                    <h3 class="faq__name">Proposez-vous des événements hybrides ?</h3>
+                  </div>
+                  <p class="faq__answer">Oui, combinant présentiel et digital.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== Services ==================-->
+      <section class="services__section" id="services">
+        <h2 class="section__title">Nos Services</h2>
+        <span class="section__subtitle">Ce que nous offrons</span>
+
+        <div class="services__container container grid">
+          <div class="services__tabs">
+            <div class="services__button button--flex services__active" data-target="#planning">
+              <i class="uil uil-calendar-alt services__icon"></i>
+              Planification
+            </div>
+          </div>
+
+          <div class="services__sections">
+            <div class="services__content services__active" data-content id="planning">
+              <div class="services__data">
+                <div>
+                  <h3 class="services__title">Conception d'événement</h3>
+                  <span class="services__subtitle">De l'idée à la réalisation</span>
+                  <div class="services__calender">
+                    <i class="uil uil-check-circle"></i>
+                    Thème et design personnalisé
+                  </div>
+                </div>
+
+                <div>
+                  <span class="services__rounder"></span>
+                  <span class="services__line"></span>
+                </div>
+              </div>
+
+              <div class="services__data">
+                <div></div>
+
+                <div>
+                  <span class="services__rounder"></span>
+                  <span class="services__line"></span>
+                </div>
+                <div>
+                  <h3 class="services__title">Gestion logistique</h3>
+                  <span class="services__subtitle">Tous les détails techniques</span>
+                  <div class="services__calender">
+                    <i class="uil uil-check-circle"></i>
+                    Lieux, transport, hébergement
+                  </div>
+                </div>
+              </div>
+
+              <div class="services__data">
+                <div>
+                  <h3 class="services__title">Animation & Programmation</h3>
+                  <span class="services__subtitle">Des moments inoubliables</span>
+                  <div class="services__calender">
+                    <i class="uil uil-check-circle"></i>
+                    Speakers, artistes, activités
+                  </div>
+                </div>
+
+                <div>
+                  <span class="services__rounder"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--=================== Réalisations ===================-->
+      <section class="portfolio section" id="portfolio">
+        <h2 class="section__title">Nos Réalisations</h2>
+        <span class="section__subtitle">Événements récents</span>
+
+        <div class="portfolio__container container swiper-container">
+          <div class="swiper-wrapper">
+            <div class="portfolio__content grid swiper-slide">
+              <img src="assets/img/event1.jpg" class="portfolio__img" />
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Lancement produit XYZ</h3>
+                <p class="portfolio__description">
+                  Événement immersif avec réalité augmentée pour 300 participants.
+                </p>
+              </div>
+            </div>
+
+            <div class="portfolio__content grid swiper-slide">
+              <img src="assets/img/event2.jpg" class="portfolio__img" />
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Mariage élégant</h3>
+                <p class="portfolio__description">
+                  Cérémonie et réception sur le thème "Nuit étoilée".
+                </p>
+              </div>
+            </div>
+
+            <div class="portfolio__content grid swiper-slide">
+              <img src="assets/img/event3.jpg" class="portfolio__img" />
+              <div class="portfolio__data">
+                <h3 class="portfolio__title">Conférence annuelle</h3>
+                <p class="portfolio__description">
+                  Événement hybride pour 500 participants en présentiel et 2000 en ligne.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-button-next">
+            <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+          </div>
+          <div class="swiper-button-prev">
+            <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <!--===================== Contact =====================-->
+      <section class="contact section" id="contact">
+        <h2 class="section__title">Contact</h2>
+        <span class="section__subtitle">Travaillons ensemble</span>
+
+        <div class="contact__container container grid">
+          <div>
+            <div class="contact__information">
+              <i class="uil uil-calling contact__icon"></i>
+              <div>
+                <h3 class="contact__title">Téléphone</h3>
+                <span class="contact__subtitle">+33 1 23 45 67 89</span>
+              </div>
+            </div>
+
+            <div class="contact__information">
+              <i class="uil uil-envelope-minus contact__icon"></i>
+              <div>
+                <h3 class="contact__title">Email</h3>
+                <span class="contact__subtitle">contact@evenementiel.com</span>
+              </div>
+            </div>
+
+            <div class="contact__information">
+              <i class="uil uil-map-marker contact__icon"></i>
+              <div>
+                <h3 class="contact__title">Adresse</h3>
+                <span class="contact__subtitle">Paris, France</span>
+              </div>
+            </div>
+          </div>
+
+          <form action="" class="contact__form grid">
+            <div class="contact__inputs grid">
+              <div class="contact__content">
+                <label for="" class="content__label">Nom</label>
+                <input type="text" class="contact__input" />
+              </div>
+
+              <div class="contact__content">
+                <label for="" class="content__label">Email</label>
+                <input type="Email" class="contact__input" />
+              </div>
+            </div>
+
+            <div class="contact__content">
+              <label for="" class="content__label">Message</label>
+              <textarea
+                name=""
+                id=""
+                cols="0"
+                rows="7"
+                class="contact__input"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!--================== Footer ===============-->
+    <footer class="footer">
+      <div class="footer__bg">
+        <div class="footer__container container grid">
+          <div>
+            <h1 class="footer__title">Événementiel+</h1>
+            <span class="footer__subtitle">Agence créative</span>
+          </div>
+
+          <ul class="footer__links">
+            <li>
+              <a href="#services" class="footer__link">Services</a>
+            </li>
+            <li>
+              <a href="#portfolio" class="footer__link">Réalisations</a>
+            </li>
+            <li>
+              <a href="#contact" class="footer__link">Contact</a>
+            </li>
+          </ul>
+
+          <div class="footer__socials">
+            <a href="#" class="footer__social" target="__blank">
+              <i class="uil uil-instagram"></i>
+            </a>
+            <a href="#" target="__blank" class="footer__social">
+              <i class="uil uil-twitter-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <p class="footer__copy">&#169; Événementiel+. Tous droits réservés</p>
+      </div>
+    </footer>
+
+    <script type="text/javascript" src="assets/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2205d59d52.js" crossorigin="anonymous"></script>
+    <script src="assets/ptj.js"></script>
+  </body>
+</html>
