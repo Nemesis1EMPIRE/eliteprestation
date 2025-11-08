@@ -93,103 +93,113 @@
 
       <!--======================= À propos ========================-->
   <!--======================= À propos ========================-->
+<!--======================= À propos ========================-->
 <section class="about section" id="about">
   <h2 class="section__title">À propos</h2>
   <span class="section__subtitle">Notre agence</span>
 
- <!-- <div class="about__container container grid">
-    <div class="about__content">
-      <p class="about__description">
-        Fondée en 2010, notre agence événementielle allie créativité et expertise pour concevoir des expériences uniques. Notre équipe passionnée travaille sans relâche pour donner vie à vos projets les plus ambitieux.
-      </p>
+  <div class="about__container container grid">
+   
 
-      <div class="about__info">
-        <div>
-          <span class="about__info-title">200+</span>
-          <span class="about__info-name">Événements <br />organisés</span>
-        </div>
-
-        <div>
-          <span class="about__info-title">50+</span>
-          <span class="about__info-name">Clients <br />satisfaits</span>
-        </div>
-
-        <div>
-          <span class="about__info-title">12</span>
-          <span class="about__info-name">Prix <br />remportés</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section des spots vidéo -->
+    <!-- Section des spots vidéo avec Swiper -->
     <div class="about__spots">
       <h3 class="about__spots-title">Nos moments forts</h3>
-      <div class="spots__container grid">
+      
+      <div class="spots-swiper-container swiper-container">
+        <div class="swiper-wrapper">
+          
+          <!-- Spot 1 -->
+          <div class="spot__card swiper-slide">
+            <div class="spot__video-container">
+              <video class="spot__video" autoplay muted loop playsinline>
+                <source src="assets/salle.mp4" type="video/mp4">
+                <source src="assets/videos/spot1.webm" type="video/webm">
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+              <div class="spot__overlay"></div>
+            </div>
+            <div class="spot__content">
+              <h4 class="spot__title">Mariages Élégants</h4>
+              <p class="spot__description">Des cérémonies magiques et personnalisées</p>
+            </div>
+          </div>
+
+          <!-- Spot 2 -->
+          <div class="spot__card swiper-slide">
+            <div class="spot__video-container">
+              <video class="spot__video" autoplay muted loop playsinline>
+                <source src="assets/cafe.mp4" type="video/mp4">
+                <source src="assets/videos/spot2.webm" type="video/webm">
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+              <div class="spot__overlay"></div>
+            </div>
+            <div class="spot__content">
+              <h4 class="spot__title">Événements d'Entreprise</h4>
+              <p class="spot__description">Lancements produits et séminaires</p>
+            </div>
+          </div>
+
+          <!-- Spot 3 -->
+          <div class="spot__card swiper-slide">
+            <div class="spot__video-container">
+              <video class="spot__video" autoplay muted loop playsinline>
+                <source src="assets/nettoyage.mp4" type="video/mp4">
+                <source src="assets/videos/spot3.webm" type="video/webm">
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+              <div class="spot__overlay"></div>
+            </div>
+            <div class="spot__content">
+              <h4 class="spot__title">Soirées Privées</h4>
+              <p class="spot__description">Ambiance unique et mémorable</p>
+            </div>
+          </div>
+
+          <!-- Spot 4 -->
+          <div class="spot__card swiper-slide">
+            <div class="spot__video-container">
+              <video class="spot__video" autoplay muted loop playsinline>
+                <source src="assets/videos/spot4.mp4" type="video/mp4">
+                <source src="assets/videos/spot4.webm" type="video/webm">
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+              <div class="spot__overlay"></div>
+            </div>
+            <div class="spot__content">
+              <h4 class="spot__title">Événements Culturels</h4>
+              <p class="spot__description">Festivals et expositions créatives</p>
+            </div>
+          </div>
+
+          <!-- Spot 5 (optionnel) -->
+          <div class="spot__card swiper-slide">
+            <div class="spot__video-container">
+              <video class="spot__video" autoplay muted loop playsinline>
+                <source src="assets/videos/spot5.mp4" type="video/mp4">
+                <source src="assets/videos/spot5.webm" type="video/webm">
+                Votre navigateur ne supporte pas la vidéo.
+              </video>
+              <div class="spot__overlay"></div>
+            </div>
+            <div class="spot__content">
+              <h4 class="spot__title">Conférences</h4>
+              <p class="spot__description">Événements professionnels mémorables</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Navigation -->
+        <div class="swiper-button-next spots-next">
+          <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
+        </div>
+        <div class="swiper-button-prev spots-prev">
+          <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
+        </div>
         
-        <!-- Spot 1 -->
-        <div class="spot__card">
-          <div class="spot__video-container">
-            <video class="spot__video" autoplay muted loop playsinline>
-              <source src="assets/salle.mp4" type="video/mp4">
-              <source src="assets/videos/spot1.webm" type="video/webm">
-              Votre navigateur ne supporte pas la vidéo.
-            </video>
-            <div class="spot__overlay"></div>
-          </div>
-          <div class="spot__content">
-            <h4 class="spot__title">Mariages Élégants</h4>
-            <p class="spot__description">Des cérémonies magiques et personnalisées</p>
-          </div>
-        </div>
-
-        <!-- Spot 2 -->
-        <div class="spot__card">
-          <div class="spot__video-container">
-            <video class="spot__video" autoplay muted loop playsinline>
-              <source src="assets/nettoyage.mp4" type="video/mp4">
-              <source src="assets/videos/spot2.webm" type="video/webm">
-              Votre navigateur ne supporte pas la vidéo.
-            </video>
-            <div class="spot__overlay"></div>
-          </div>
-          <div class="spot__content">
-            <h4 class="spot__title">Événements d'Entreprise</h4>
-            <p class="spot__description">Lancements produits et séminaires</p>
-          </div>
-        </div>
-
-        <!-- Spot 3 -->
-        <div class="spot__card">
-          <div class="spot__video-container">
-            <video class="spot__video" autoplay muted loop playsinline>
-              <source src="assets/cafe.mp4" type="video/mp4">
-              <source src="assets/videos/spot3.webm" type="video/webm">
-              Votre navigateur ne supporte pas la vidéo.
-            </video>
-            <div class="spot__overlay"></div>
-          </div>
-          <div class="spot__content">
-            <h4 class="spot__title">Soirées Privées</h4>
-            <p class="spot__description">Ambiance unique et mémorable</p>
-          </div>
-        </div>
-
-        <!-- Spot 4 -->
-        <div class="spot__card">
-          <div class="spot__video-container">
-            <video class="spot__video" autoplay muted loop playsinline>
-              <source src="assets/videos/spot4.mp4" type="video/mp4">
-              <source src="assets/videos/spot4.webm" type="video/webm">
-              Votre navigateur ne supporte pas la vidéo.
-            </video>
-            <div class="spot__overlay"></div>
-          </div>
-          <div class="spot__content">
-            <h4 class="spot__title">Événements Culturels</h4>
-            <p class="spot__description">Festivals et expositions créatives</p>
-          </div>
-        </div>
-
+        <!-- Pagination -->
+        <div class="swiper-pagination spots-pagination"></div>
       </div>
     </div>
   </div>
