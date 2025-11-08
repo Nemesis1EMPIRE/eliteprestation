@@ -4,9 +4,9 @@
 /*=============== VARIABLES CSS ===============*/
 :root {
   /*========== Colors ==========*/
-  --first-color: #1E0F1C; /* Rose vif pour l'énergie événementielle */
-  --first-color-alt: #D90429; /* Rouge plus foncé */
-  --title-color: #2B2D42; /* Noir bleuté pour les titres */
+  --first-color: #1E0F1C; /* Maron foncé pour l'énergie événementielle */
+  --first-color-alt: #384454; /* Rouge plus foncé */
+  --title-color: #384454; /* Noir bleuté pour les titres */
   --text-color: #8D99AE; /* Gris bleuté pour le texte */
   --body-color: #F8F9FA; /* Fond très clair */
   --container-color: #FFFFFF; /* Blanc pour les conteneurs */
