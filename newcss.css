@@ -468,106 +468,316 @@ img {
 }
 
 /*=============== SERVICES ===============*/
-.services__section {
-  background: var(--body-color);
-}
-
-.services__tabs {
-  display: flex;
-  justify-content: center;
-  margin-bottom: var(--mb-2);
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.services__button {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  background: var(--container-color);
-  border-radius: 50px;
-  color: var(--title-color);
-  font-weight: var(--font-medium);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.services__button:hover,
-.services__active {
-  background: var(--first-color);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(255, 77, 109, 0.3);
-}
-
-.services__icon {
-  font-size: 1.2rem;
-}
-
-.services__sections {
+.services {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
 }
 
-.services__content {
-  display: none;
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" opacity="0.02"><path fill="%23FF4D6D" d="M500,250c138.07,0,250,111.93,250,250s-111.93,250-250,250s-250-111.93-250-250S361.93,250,500,250z"/></svg>') repeat;
+  pointer-events: none;
 }
 
-.services__content.services__active {
-  display: block;
-  animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.services__data {
+.services__grid {
   display: grid;
-  grid-template-columns: 1fr max-content 1fr;
-  column-gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.service__card {
+  background: var(--container-color);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.service__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.service__card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.service__card:hover::before {
+  transform: scaleX(1);
+}
+
+.service__icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.service__card:hover .service__icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service__icon::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  filter: blur(10px);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.service__icon i {
+  font-size: 2rem;
+  color: white;
+}
+
+.service__content {
+  flex: 1;
   margin-bottom: 2rem;
 }
 
-.services__title {
-  font-size: var(--h3-font-size);
-  font-weight: var(--font-medium);
+.service__title {
+  font-size: 1.4rem;
+  color: var(--title-color);
+  margin-bottom: 1rem;
+  font-weight: var(--font-semi-bold);
+  line-height: 1.3;
+}
+
+.service__description {
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.service__features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service__features li {
+  display: flex;
+  align-items: center;
   margin-bottom: 0.5rem;
+  color: var(--text-color);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
-.services__subtitle {
-  display: inline-block;
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-1);
-  color: var(--text-color);
+.service__features li:hover {
+  color: var(--first-color);
 }
 
-.services__calender {
-  font-size: var(--smaller-font-size);
-  color: var(--text-color);
+.service__features i {
+  color: var(--first-color);
+  margin-right: 0.75rem;
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.service__features li:hover i {
+  transform: scale(1.2);
+}
+
+.service__hover {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, var(--first-color), var(--first-color-alt));
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service__card:hover .service__hover {
+  bottom: 0;
+}
+
+.service__btn {
+  color: white;
+  text-decoration: none;
+  font-weight: var(--font-semi-bold);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid white;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
 }
 
-.services__rounder {
-  display: inline-block;
-  width: 13px;
-  height: 13px;
-  background-color: var(--first-color);
-  border-radius: 50%;
+.service__btn:hover {
+  background: white;
+  color: var(--first-color);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.services__line {
-  display: block;
-  width: 1px;
-  height: 100%;
-  background-color: var(--first-color);
-  transform: translate(6px, -7px);
+/* Effet de brillance au survol */
+.service__card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
 }
 
+.service__card:hover::after {
+  opacity: 1;
+  animation: shine 1.5s ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+/* Animation d'apparition des cartes */
+.service__card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.service__card:nth-child(1) { animation-delay: 0.1s; }
+.service__card:nth-child(2) { animation-delay: 0.2s; }
+.service__card:nth-child(3) { animation-delay: 0.3s; }
+.service__card:nth-child(4) { animation-delay: 0.4s; }
+.service__card:nth-child(5) { animation-delay: 0.5s; }
+.service__card:nth-child(6) { animation-delay: 0.6s; }
+
+/*=============== MEDIA QUERIES ===============*/
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .service__card {
+    padding: 1.5rem;
+  }
+  
+  .service__icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .service__icon i {
+    font-size: 1.5rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+  .services__grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .service__hover {
+    position: relative;
+    bottom: 0;
+    margin-top: 1.5rem;
+    border-radius: 1rem;
+  }
+  
+  .service__card:hover .service__hover {
+    bottom: 0;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .services__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1025px) {
+  .services__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Animation pour le contenu au survol */
+.service__content {
+  transition: transform 0.3s ease;
+}
+
+.service__card:hover .service__content {
+  transform: translateY(-10px);
+}
+
+/* Effet de gradient animé sur les icônes */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.service__icon {
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
 /*=============== PORTFOLIO ===============*/
 .portfolio__container {
   overflow: initial;
