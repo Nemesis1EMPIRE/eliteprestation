@@ -2494,3 +2494,40 @@ img {
 .contact__information:first-child .contact__icon-box {
   background: #25D366;
 }
+
+
+/* Couleurs pour tous les réseaux sociaux */
+.contact__social-link:nth-child(1) { background: linear-gradient(45deg, #405DE6, #E1306C, #F56040); } /* Instagram */
+.contact__social-link:nth-child(2) { background: #000000; } /* TikTok */
+.contact__social-link:nth-child(3) { background: #1877F2; } /* Facebook */
+.contact__social-link:nth-child(4) { background: #FF0000; } /* YouTube */
+.contact__social-link:nth-child(5) { background: #0A66C2; } /* LinkedIn */
+.contact__social-link:nth-child(6) { background: #25D366; } /* WhatsApp */
+
+/* Hover effects */
+.contact__social-link:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact__social-link:nth-child(1):hover { background: #E1306C; } /* Instagram */
+.contact__social-link:nth-child(2):hover { background: #00F2EA; } /* TikTok */
+.contact__social-link:nth-child(3):hover { background: #0D5DBD; } /* Facebook */
+.contact__social-link:nth-child(4):hover { background: #CC0000; } /* YouTube */
+.contact__social-link:nth-child(5):hover { background: #004182; } /* LinkedIn */
+.contact__social-link:nth-child(6):hover { background: #128C7E; } /* WhatsApp */
+
+/* Animation TikTok */
+@keyframes tiktokGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px #000000);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px #00F2EA);
+  }
+}
+
+.contact__social-link:nth-child(2):hover i,
+.footer__social:nth-child(2):hover i {
+  animation: tiktokGlow 1s ease-in-out infinite;
+}
