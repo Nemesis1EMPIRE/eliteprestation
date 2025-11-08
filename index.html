@@ -62,29 +62,34 @@
 
     <main class="main">
       <!--========================= Accueil =====================-->
-      <section class="home section" id="home">
-        <div class="video-background">
-          <video autoplay muted loop id="bg-video">
-            <source src="assets/videos/event-background.mp4" type="video/mp4">
-            <img src="assets/img/event-fallback.jpg" alt="Background événementiel">
-          </video>
-          <div class="video-overlay"></div>
-        </div>
-        
-        <div class="home__container container grid">
-          <div class="home__content grid">
-            <div class="home__data">
-              <h1 class="home__title">Agence Événementielle Créative</h1>
-              <h3 class="home__subtitle">
-                Des expériences mémorables sur mesure
-              </h3>
-              <p class="home__description">
-                Nous transformons vos idées en événements exceptionnels avec innovation et passion.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+    <!-- Dans la section home - correction -->
+<section class="home section" id="home">
+  <div class="video-background">
+    <video autoplay muted loop playsinline id="bg-video">
+      <source src="Assets/LOGOELITE.mp4" type="video/mp4">
+      <!-- Ajoute des formats alternatifs -->
+      <source src="assets/videos/event-background.webm" type="video/webm">
+      <img src="assets/img/event-fallback.jpg" alt="Background événementiel">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+  
+  <div class="home__container container grid">
+    <div class="home__content grid">
+      <div class="home__data">
+        <h1 class="home__title">Agence Événementielle Créative</h1>
+        <h3 class="home__subtitle">Des expériences mémorables sur mesure</h3>
+        <p class="home__description">
+          Nous transformons vos idées en événements exceptionnels avec innovation et passion.
+        </p>
+        <!-- Ajoute un CTA -->
+        <a href="#contact" class="button button--flex">
+          Demander un devis <i class="uil uil-message button__icon"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
 
       <!--======================= À propos ========================-->
       <section class="about section" id="about">
