@@ -169,9 +169,128 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     const activeSlides = document.querySelectorAll('.swiper-slide-active .spot__video, .swiper-slide-next .spot__video, .swiper-slide-prev .spot__video');
-    
+
     activeSlides.forEach(video => {
       video.play().catch(e => console.log('Auto-play prevented:', e));
     });
+  });
+});
+
+
+
+
+// Dans ton fichier script.js
+document.addEventListener('DOMContentLoaded', function() {
+  const whatsappForm = document.getElementById('whatsappForm');
+  
+  // Numéro de téléphone WhatsApp (remplace par ton numéro)
+  const whatsappNumber = '24100000000'; // Sans le +
+  
+  whatsappForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Récupération des valeurs du formulaire
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const email = document.getElementById('email').value;
+    const eventType = document.getElementById('event').value;
+    const date = document.getElementById('date').value;
+    const budget = document.getElementById('budget').value;
+    const message = document.getElementById('message').value;
+    
+    // Formatage de la date
+    const formattedDate = date ? new Date(date).toLocaleDateString('fr-FR') : 'Non spécifiée';
+    
+    // Construction du message WhatsApp
+    let whatsappMessage = `*NOUVELLE DEMANDE DE DEVIS - ÉLITE PRESTATIONS*%0A%0A`;
+    
+    whatsappMessage += `*Nom:* ${name}%0A`;
+    whatsappMessage += `*Téléphone:* ${phone}%0A`;
+    
+    if (email) {
+      whatsappMessage += `*Email:* ${email}%0A`;
+    }
+    
+    whatsappMessage += `*Type d'événement:* ${eventType}%0A`;
+    whatsappMessage += `*Date prévue:* ${formattedDate}%0A`;
+    
+    if (budget) {
+      whatsappMessage += `*Budget estimé:* ${budget}%0A`;
+    }
+    
+    whatsappMessage += `%0A*Message:*%0A${message}%0A%0A`;
+    whatsappMessage += `_Message envoyé via le site web Élite Prestations_`;
+    
+    // Encodage URL du message
+    const encodedMessage = encodeURIComponent(whatsappMessage).replace(/'/g, "%27").replace(/"/g, "%22");
+    
+    // URL WhatsApp
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+    
+    // Ouverture dans une nouvelle fenêtre
+    window.open(whatsappURL, '_blank');
+    
+    // Réinitialisation du formulaire (optionnel)
+    // whatsappForm.reset();
+    
+    // Message de confirmation
+    showNotification('Formulaire prêt ! Redirection vers WhatsApp...');
+  });
+  
+  // Fonction pour afficher une notification
+  function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--first-color);
+      color: white;
+      padding: 1rem 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      z-index: 10000;
+      font-weight: 500;
+      animation: slideIn 0.3s ease;
+    `;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      notification.remove();
+    }, 3000);
+  }
+  
+  // Animation pour la notification
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+  
+  // Formatage automatique du numéro de téléphone
+  const phoneInput = document.getElementById('phone');
+  phoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    if (value.startsWith('241')) {
+      value = value.substring(3);
+    }
+    
+    if (value.length > 0) {
+      value = '+241 ' + value;
+    }
+    
+    e.target.value = value;
   });
 });
