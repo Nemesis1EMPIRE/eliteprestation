@@ -337,7 +337,7 @@ img {
 
 /*=============== ABOUT ===============*/
 .about__img {
-  width: 300px;
+  width: 900px;
   border-radius: 1.5rem;
   justify-self: center;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
