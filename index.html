@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Élite prestations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="swipper-bundle.min.css" />
     <link rel="stylesheet" href="newcss.css" />
     <link
@@ -581,90 +582,104 @@
         </div>
 
         <!-- Réseaux sociaux -->
-        <div class="contact__socials">
-          <h4 class="contact__socials-title">Suivez-nous</h4>
-          <div class="contact__social-links">
-            <a href="#" class="contact__social-link">
-              <i class="uil uil-instagram"></i>
-            </a>
-            <a href="#" class="contact__social-link">
-              <i class="uil uil-facebook-f"></i>
-            </a>
-            <a href="#" class="contact__social-link">
-              <i class="uil uil-linkedin-alt"></i>
-            </a>
-            <a href="#" class="contact__social-link">
-              <i class="uil uil-tiktok-alt"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+<!-- Section Contact -->
+<div class="contact__socials">
+  <h4 class="contact__socials-title">Suivez-nous</h4>
+  <div class="contact__social-links">
+    <a href="https://instagram.com/toncompte" class="contact__social-link" target="_blank" title="Instagram">
+      <i class="uil uil-instagram"></i>
+    </a>
+    <a href="https://tiktok.com/@toncompte" class="contact__social-link" target="_blank" title="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://facebook.com/toncompte" class="contact__social-link" target="_blank" title="Facebook">
+      <i class="uil uil-facebook-f"></i>
+    </a>
+    <a href="https://youtube.com/toncompte" class="contact__social-link" target="_blank" title="YouTube">
+      <i class="uil uil-youtube"></i>
+    </a>
+    <a href="https://linkedin.com/company/toncompte" class="contact__social-link" target="_blank" title="LinkedIn">
+      <i class="uil uil-linkedin-alt"></i>
+    </a>
+    <a href="https://wa.me/24162391121" class="contact__social-link" target="_blank" title="WhatsApp">
+      <i class="uil uil-whatsapp"></i>
+    </a>
+  </div>
+</div>
 
-      <!-- Formulaire de contact -->
+     <!-- Formulaire de contact pour WhatsApp -->
       <div class="contact__form-container">
-        <form action="" class="contact__form grid">
+        <form id="whatsappForm" class="contact__form grid">
           <div class="contact__form-header">
             <h3 class="contact__form-title">Envoyez-nous un message</h3>
             <p class="contact__form-subtitle">
-              Remplissez le formulaire et nous vous recontacterons sous 24h.
+              Remplissez le formulaire et envoyez directement sur WhatsApp.
             </p>
           </div>
 
           <div class="contact__inputs grid">
             <div class="contact__content">
               <label for="name" class="contact__label">Nom complet *</label>
-              <input type="text" id="name" class="contact__input" placeholder="Votre nom complet" required />
+              <input type="text" id="name" name="name" class="contact__input" placeholder="Votre nom complet" required />
             </div>
 
             <div class="contact__content">
-              <label for="email" class="contact__label">Email *</label>
-              <input type="email" id="email" class="contact__input" placeholder="votre@email.com" required />
+              <label for="phone" class="contact__label">Téléphone WhatsApp *</label>
+              <input type="tel" id="phone" name="phone" class="contact__input" placeholder="+241 XX XX XX XX" required />
             </div>
           </div>
 
           <div class="contact__inputs grid">
             <div class="contact__content">
-              <label for="phone" class="contact__label">Téléphone</label>
-              <input type="tel" id="phone" class="contact__input" placeholder="+241 XX XX XX XX" />
+              <label for="email" class="contact__label">Email</label>
+              <input type="email" id="email" name="email" class="contact__input" placeholder="votre@email.com" />
             </div>
 
             <div class="contact__content">
-              <label for="event" class="contact__label">Type d'événement</label>
-              <select id="event" class="contact__input">
+              <label for="event" class="contact__label">Type d'événement *</label>
+              <select id="event" name="event" class="contact__input" required>
                 <option value="">Sélectionnez un type</option>
-                <option value="mariage">Mariage</option>
-                <option value="entreprise">Événement d'entreprise</option>
-                <option value="conference">Conférence</option>
-                <option value="anniversaire">Anniversaire</option>
-                <option value="autre">Autre</option>
+                <option value="Mariage">Mariage</option>
+                <option value="Événement d'entreprise">Événement d'entreprise</option>
+                <option value="Conférence">Conférence</option>
+                <option value="Anniversaire">Anniversaire</option>
+                <option value="Soirée de gala">Soirée de gala</option>
+                <option value="Lancement produit">Lancement produit</option>
+                <option value="Autre">Autre</option>
               </select>
             </div>
           </div>
 
           <div class="contact__content">
             <label for="date" class="contact__label">Date prévue</label>
-            <input type="date" id="date" class="contact__input" />
+            <input type="date" id="date" name="date" class="contact__input" />
           </div>
 
           <div class="contact__content">
             <label for="budget" class="contact__label">Budget estimé</label>
-            <select id="budget" class="contact__input">
+            <select id="budget" name="budget" class="contact__input">
               <option value="">Sélectionnez une fourchette</option>
-              <option value="500k-1M">500 000 - 1 000 000 FCFA</option>
-              <option value="1M-2M">1 - 2 millions FCFA</option>
-              <option value="2M-5M">2 - 5 millions FCFA</option>
-              <option value="5M+">Plus de 5 millions FCFA</option>
+              <option value="500 000 - 1 000 000 FCFA">500 000 - 1 000 000 FCFA</option>
+              <option value="1 - 2 millions FCFA">1 - 2 millions FCFA</option>
+              <option value="2 - 5 millions FCFA">2 - 5 millions FCFA</option>
+              <option value="Plus de 5 millions FCFA">Plus de 5 millions FCFA</option>
+              <option value="À discuter">À discuter</option>
             </select>
           </div>
 
           <div class="contact__content">
             <label for="message" class="contact__label">Message *</label>
-            <textarea id="message" cols="0" rows="6" class="contact__input contact__textarea" placeholder="Décrivez votre projet, vos attentes et toute information importante..." required></textarea>
+            <textarea id="message" name="message" cols="0" rows="6" class="contact__input contact__textarea" placeholder="Décrivez votre projet, vos attentes et toute information importante..." required></textarea>
           </div>
 
           <button type="submit" class="button button--flex contact__button">
-            Envoyer le message <i class="uil uil-message button__icon"></i>
+            <i class="uil uil-whatsapp"></i>
+            Envoyer sur WhatsApp
           </button>
+
+          <div class="contact__whatsapp-note">
+            <p><i class="uil uil-info-circle"></i> Vous serez redirigé vers WhatsApp pour finaliser l'envoi</p>
+          </div>
         </form>
       </div>
     </div>
@@ -693,16 +708,25 @@
             </li>
           </ul>
 
-          <div class="footer__socials">
-            <a href="#" class="footer__social" target="__blank">
-              <i class="uil uil-instagram"></i>
-            </a>
-            <a href="#" target="__blank" class="footer__pial">
-              <i class="uil uil-twitter-alt"></i>
-            </a>
-          </div>
-        </div>
-
+          
+<!-- Footer -->
+<div class="footer__socials">
+  <a href="https://instagram.com/toncompte" class="footer__social" target="_blank" title="Instagram">
+    <i class="uil uil-instagram"></i>
+  </a>
+  <a href="https://tiktok.com/@toncompte" class="footer__social" target="_blank" title="TikTok">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://facebook.com/toncompte" class="footer__social" target="_blank" title="Facebook">
+    <i class="uil uil-facebook-f"></i>
+  </a>
+  <a href="https://youtube.com/toncompte" class="footer__social" target="_blank" title="YouTube">
+    <i class="uil uil-youtube"></i>
+  </a>
+  <a href="https://wa.me/24162391121" class="footer__social" target="_blank" title="WhatsApp">
+    <i class="uil uil-whatsapp"></i>
+  </a>
+</div>
         <p class="footer__copy">&#169; Élite prestation. Tous droits réservés</p>
       </div>
     </footer>
