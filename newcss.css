@@ -1346,3 +1346,275 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+/*=============== ABOUT SPOTS SWIPER ===============*/
+.about__spots {
+  margin-top: var(--mb-2-5);
+  width: 100%;
+}
+
+.about__spots-title {
+  font-size: var(--h2-font-size);
+  color: var(--title-color);
+  text-align: center;
+  margin-bottom: var(--mb-2);
+  font-weight: var(--font-semi-bold);
+}
+
+.spots-swiper-container {
+  width: 100%;
+  padding: 1rem 0 3rem;
+  position: relative;
+}
+
+.spot__card {
+  background: var(--container-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: auto;
+  margin: 0 0.5rem;
+}
+
+.spot__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.spot__video-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.spot__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.spot__card:hover .spot__video {
+  transform: scale(1.05);
+}
+
+.spot__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 70%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+.spot__content {
+  padding: 1.5rem 1rem;
+  text-align: center;
+}
+
+.spot__title {
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  margin-bottom: var(--mb-0-5);
+  font-weight: var(--font-semi-bold);
+}
+
+.spot__description {
+  font-size: var(--small-font-size);
+  color: var(--text-color);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Navigation des spots */
+.spots-next,
+.spots-prev {
+  color: var(--first-color);
+  background: var(--container-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.spots-next:hover,
+.spots-prev:hover {
+  background: var(--first-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.spots-next::after,
+.spots-prev::after {
+  font-size: 1.2rem;
+}
+
+.spots-pagination {
+  bottom: 0 !important;
+}
+
+.spots-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--text-color);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.spots-pagination .swiper-pagination-bullet-active {
+  background: var(--first-color);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Indicateur de lecture vidéo */
+.spot__video-container::before {
+  content: '🔇';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+/* Animation des spots */
+.spot__card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*=============== MEDIA QUERIES POUR LES SPOTS SWIPER ===============*/
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+  .spot__video-container {
+    height: 180px;
+  }
+  
+  .spot__content {
+    padding: 1rem 0.75rem;
+  }
+  
+  .spots-next,
+  .spots-prev {
+    width: 35px;
+    height: 35px;
+    display: none; /* Cache les flèches sur très petits écrans */
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 568px) {
+  .spot__video-container {
+    height: 220px;
+  }
+  
+  .spots-swiper-container {
+    padding: 1rem 2rem 3rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about__container {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    gap: 3rem;
+  }
+  
+  .about__spots {
+    margin-top: 0;
+  }
+  
+  .spot__video-container {
+    height: 250px;
+  }
+  
+  .about__spots-title {
+    text-align: left;
+    margin-bottom: var(--mb-1-5);
+  }
+  
+  .spots-swiper-container {
+    padding: 1rem 3rem 3rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1024px) {
+  .spot__video-container {
+    height: 280px;
+  }
+  
+  .spot__content {
+    padding: 1.5rem;
+  }
+  
+  .spots-swiper-container {
+    padding: 1rem 4rem 3rem;
+  }
+}
+
+/* Configuration Swiper responsive */
+@media screen and (max-width: 767px) {
+  .spots-swiper-container .swiper-slide {
+    width: 280px; /* Largeur fixe pour mobile */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .spots-swiper-container .swiper-slide {
+    width: 320px; /* Largeur fixe pour tablette */
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .spots-swiper-container .swiper-slide {
+    width: 350px; /* Largeur fixe pour desktop */
+  }
+}
+
+/* Fallback pour mobile */
+@media screen and (max-width: 768px) {
+  .spot__video {
+    transform: scale(1.1);
+  }
+}
+
+/* Animation de pulsation subtile */
+@keyframes subtlePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.spot__card:hover .spot__video {
+  animation: subtlePulse 2s ease-in-out infinite;
+}
