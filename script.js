@@ -294,3 +294,78 @@ document.addEventListener('DOMContentLoaded', function() {
     e.target.value = value;
   });
 });
+
+// Dans ton script.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Gestion de la vidéo de fond
+    const bgVideo = document.getElementById('bg-video');
+    
+    function playVideo(video) {
+        const promise = video.play();
+        
+        if (promise !== undefined) {
+            promise.then(_ => {
+                // Lecture automatique démarrée
+                console.log('Video playing automatically');
+            }).catch(error => {
+                // Lecture automatique échouée
+                console.log('Auto-play prevented, showing fallback');
+                showFallbackImage();
+            });
+        }
+    }
+    
+    function showFallbackImage() {
+        const videoBackground = document.querySelector('.video-background');
+        videoBackground.style.backgroundImage = "url('assets/img/event-fallback.jpg')";
+        if (bgVideo) {
+            bgVideo.style.display = 'none';
+        }
+    }
+    
+    // Essayer de lire la vidéo
+    if (bgVideo) {
+        // Sur mobile, attendre l'interaction utilisateur
+        if (isMobileDevice()) {
+            // Ajouter un écouteur pour le premier touch/click
+            document.body.addEventListener('touchstart', function startVideo() {
+                playVideo(bgVideo);
+                document.body.removeEventListener('touchstart', startVideo);
+            }, { once: true });
+            
+            document.body.addEventListener('click', function startVideo() {
+                playVideo(bgVideo);
+                document.body.removeEventListener('click', startVideo);
+            }, { once: true });
+        } else {
+            // Sur desktop, lecture automatique
+            playVideo(bgVideo);
+        }
+    }
+    
+    // Détection appareil mobile
+    function isMobileDevice() {
+        return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+    }
+    
+    // Gestion des vidéos des spots
+    const spotVideos = document.querySelectorAll('.spot__video');
+    
+    spotVideos.forEach(video => {
+        video.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+        
+        // Redémarrage automatique en cas de bug
+        video.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play().catch(e => console.log('Cannot replay video'));
+        });
+    });
+});
