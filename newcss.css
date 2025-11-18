@@ -323,7 +323,38 @@ img {
   color: rgba(255, 255, 255, 0.9);
   animation: fadeInUp 1s ease-out 0.4s both;
 }
+/* Dans la section home */
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Forcer la lecture sur mobile */
+    playsinline: true;
+    webkit-playsinline: true;
+}
 
+/* Cache la vidéo sur mobile très petit et utilise une image de fallback */
+@media screen and (max-width: 768px) {
+    .video-background video {
+        display: block !important; /* Forcer l'affichage */
+    }
+    
+    /* Fallback si la vidéo ne se lance pas */
+    .video-background {
+        position: relative;
+    }
+    
+    .video-background::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('assets/img/event-fallback.jpg') center/cover;
+        z-index: -1;
+    }
+}
 @keyframes fadeInUp {
   from {
     opacity: 0;
