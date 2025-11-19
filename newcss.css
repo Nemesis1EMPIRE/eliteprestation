@@ -72,6 +72,30 @@ body {
     display: none !important;
 }
 
+/* Conteneur horizontal pour Portfolio et Services */
+.horizontal-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;       /* Active le défilement horizontal */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  white-space: nowrap;     /* Empêche les éléments de passer à la ligne */
+}
+
+/* Optionnel : barre de défilement stylée (respecte tes couleurs) */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-track {
+  background: rgba(255,255,255,0.2);
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: #0a2342;     /* ton bleu foncé */
+  border-radius: 4px;
+}
 /* Curseur personnalisé pour le swipe */
 body.swipe-mode {
   cursor: grab;
