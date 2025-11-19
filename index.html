@@ -6,13 +6,14 @@
     <title>Élite Prestation | Votre Agence Événementielle au Gabon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Variables et styles de base */
+        /* Variables et styles de base - Noir et Blanc */
         :root {
-            --primary: #8a4fff;
-            --secondary: #ff6b8b;
-            --dark: #2d2b55;
+            --primary: #000000;
+            --secondary: #ffffff;
+            --accent: #333333;
             --light: #f8f9fa;
             --gray: #6c757d;
+            --light-gray: #e9ecef;
             --transition: all 0.3s ease;
         }
         
@@ -29,8 +30,8 @@
         
         body {
             line-height: 1.6;
-            color: var(--dark);
-            background-color: var(--light);
+            color: var(--primary);
+            background-color: var(--secondary);
         }
         
         .container {
@@ -47,11 +48,11 @@
         h1, h2, h3, h4 {
             margin-bottom: 15px;
             line-height: 1.2;
+            font-weight: 700;
         }
         
         h1 {
             font-size: 3.5rem;
-            font-weight: 700;
         }
         
         h2 {
@@ -68,8 +69,8 @@
             left: 50%;
             transform: translateX(-50%);
             width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            height: 3px;
+            background: var(--primary);
         }
         
         p {
@@ -79,31 +80,33 @@
         .btn {
             display: inline-block;
             padding: 12px 30px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
-            border: none;
-            border-radius: 30px;
+            background: var(--primary);
+            color: var(--secondary);
+            border: 2px solid var(--primary);
+            border-radius: 0;
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(138, 79, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
         
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(138, 79, 255, 0.4);
+            background: transparent;
+            color: var(--primary);
         }
         
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--primary);
             color: var(--primary);
+            border: 2px solid var(--primary);
         }
         
         .btn-outline:hover {
             background: var(--primary);
-            color: white;
+            color: var(--secondary);
         }
         
         /* Header et Navigation */
@@ -113,13 +116,13 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: var(--secondary);
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
         }
         
         header.scrolled {
-            background-color: white;
+            background-color: var(--secondary);
             padding: 10px 0;
         }
         
@@ -132,9 +135,10 @@
         
         .logo {
             font-size: 1.8rem;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--primary);
             text-decoration: none;
+            letter-spacing: 2px;
         }
         
         .nav-links {
@@ -148,31 +152,35 @@
         
         .nav-links a {
             text-decoration: none;
-            color: var(--dark);
+            color: var(--primary);
             font-weight: 500;
             transition: var(--transition);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
         }
         
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
         
         .menu-toggle {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
+            color: var(--primary);
         }
         
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(45, 43, 85, 0.8), rgba(45, 43, 85, 0.8)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
             background-size: cover;
             background-position: center;
             display: flex;
             align-items: center;
             text-align: center;
-            color: white;
+            color: var(--secondary);
         }
         
         .hero-content {
@@ -183,6 +191,8 @@
         .hero h1 {
             margin-bottom: 20px;
             font-size: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
         }
         
         .hero p {
@@ -199,14 +209,15 @@
         }
         
         .service-card {
-            background: white;
-            border-radius: 10px;
+            background: var(--secondary);
+            border-radius: 0;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
             transition: var(--transition);
             height: 100%;
             display: flex;
             flex-direction: column;
+            border: 1px solid var(--light-gray);
         }
         
         .service-card:hover {
@@ -218,6 +229,12 @@
             height: 200px;
             background-size: cover;
             background-position: center;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+        
+        .service-card:hover .service-img {
+            filter: grayscale(0%);
         }
         
         .service-content {
@@ -240,12 +257,13 @@
         }
         
         .service-tag {
-            background: rgba(138, 79, 255, 0.1);
+            background: var(--light-gray);
             color: var(--primary);
             padding: 5px 12px;
-            border-radius: 20px;
+            border-radius: 0;
             font-size: 0.8rem;
             font-weight: 500;
+            border: 1px solid var(--accent);
         }
         
         .service-features {
@@ -261,11 +279,11 @@
         }
         
         .service-features li:before {
-            content: '✓';
+            content: '■';
             position: absolute;
             left: 0;
             color: var(--primary);
-            font-weight: bold;
+            font-size: 0.8rem;
         }
         
         .service-cta {
@@ -275,7 +293,7 @@
         
         /* Portfolio Section */
         .portfolio {
-            background-color: #f0f2f5;
+            background-color: var(--light);
         }
         
         .portfolio-grid {
@@ -286,10 +304,10 @@
         
         .portfolio-item {
             position: relative;
-            border-radius: 10px;
+            border-radius: 0;
             overflow: hidden;
             height: 300px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
         }
         
         .portfolio-img {
@@ -297,6 +315,7 @@
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
+            filter: grayscale(100%);
         }
         
         .portfolio-overlay {
@@ -305,7 +324,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, rgba(138, 79, 255, 0.8), rgba(255, 107, 139, 0.8));
+            background: rgba(0, 0, 0, 0.8);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -314,7 +333,7 @@
             transition: var(--transition);
             padding: 20px;
             text-align: center;
-            color: white;
+            color: var(--secondary);
         }
         
         .portfolio-item:hover .portfolio-overlay {
@@ -323,6 +342,7 @@
         
         .portfolio-item:hover .portfolio-img {
             transform: scale(1.1);
+            filter: grayscale(0%);
         }
         
         /* About Section */
@@ -334,7 +354,6 @@
         }
         
         .about-img {
-            border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
@@ -343,11 +362,17 @@
             width: 100%;
             height: auto;
             display: block;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+        
+        .about-img:hover img {
+            filter: grayscale(0%);
         }
         
         /* Testimonials Section */
         .testimonials {
-            background-color: #f0f2f5;
+            background-color: var(--light);
         }
         
         .testimonial-slider {
@@ -357,11 +382,11 @@
         }
         
         .testimonial {
-            background: white;
+            background: var(--secondary);
             padding: 30px;
-            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
+            border: 1px solid var(--light-gray);
         }
         
         .client-img {
@@ -370,7 +395,7 @@
             border-radius: 50%;
             margin: 0 auto 20px;
             overflow: hidden;
-            border: 4px solid var(--primary);
+            border: 3px solid var(--primary);
         }
         
         .client-img img {
@@ -409,11 +434,11 @@
         }
         
         .contact-icon {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            color: white;
+            background: var(--primary);
+            color: var(--secondary);
             width: 50px;
             height: 50px;
-            border-radius: 50%;
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -422,10 +447,10 @@
         }
         
         .contact-form {
-            background: white;
+            background: var(--secondary);
             padding: 30px;
-            border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--light-gray);
         }
         
         .form-group {
@@ -435,16 +460,17 @@
         .form-control {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            border: 1px solid var(--light-gray);
+            border-radius: 0;
             font-size: 1rem;
             transition: var(--transition);
+            background: var(--secondary);
         }
         
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.2);
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
         }
         
         textarea.form-control {
@@ -454,8 +480,8 @@
         
         /* Footer */
         footer {
-            background-color: var(--dark);
-            color: white;
+            background-color: var(--primary);
+            color: var(--secondary);
             padding: 60px 0 20px;
         }
         
@@ -471,6 +497,7 @@
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            color: var(--secondary);
         }
         
         .footer-column h3::after {
@@ -479,8 +506,8 @@
             bottom: 0;
             left: 0;
             width: 40px;
-            height: 3px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            height: 2px;
+            background: var(--secondary);
         }
         
         .footer-links {
@@ -498,7 +525,7 @@
         }
         
         .footer-links a:hover {
-            color: white;
+            color: var(--secondary);
             padding-left: 5px;
         }
         
@@ -515,13 +542,15 @@
             width: 40px;
             height: 40px;
             background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border-radius: 50%;
+            color: var(--secondary);
+            border-radius: 0;
             transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .social-links a:hover {
-            background: linear-gradient(to right, var(--primary), var(--secondary));
+            background: var(--secondary);
+            color: var(--primary);
             transform: translateY(-5px);
         }
         
@@ -563,7 +592,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: white;
+                background: var(--secondary);
                 flex-direction: column;
                 align-items: center;
                 padding-top: 50px;
@@ -616,7 +645,7 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Élite Prestation</a>
+                <a href="#" class="logo">ÉLITE PRESTATION</a>
                 <ul class="nav-links">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
@@ -635,8 +664,8 @@
     <section class="hero" id="accueil">
         <div class="container">
             <div class="hero-content">
-                <h1>Votre événement, notre expertise</h1>
-                <p>Élite Prestation, votre partenaire événementiel au Gabon. De la location de salle à l'organisation complète, nous transformons vos idées en moments inoubliables.</p>
+                <h1>Élégance & Professionnalisme</h1>
+                <p>Élite Prestation, l'excellence événementielle au Gabon. De la location de salle à l'organisation complète, nous créons des moments d'exception.</p>
                 <a href="#contact" class="btn">Planifier mon événement</a>
             </div>
         </div>
@@ -824,8 +853,8 @@
             <h2>À Propos de Nous</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Élite Prestation, Votre Partenaire Événementiel au Gabon</h3>
-                    <p>Forte de plusieurs années d'expérience, Élite Prestation s'est imposée comme la référence en matière d'organisation événementielle au Gabon. Notre approche combine expertise locale et standards internationaux.</p>
+                    <h3>Élite Prestation, l'Excellence Événementielle</h3>
+                    <p>Forte de plusieurs années d'expérience, Élite Prestation s'est imposée comme la référence en matière d'organisation événementielle au Gabon. Notre approche allie élégance, professionnalisme et attention aux détails.</p>
                     <p>Nous comprenons l'importance de chaque événement dans votre vie, qu'il s'agisse d'un mariage, d'un séminaire professionnel ou d'une célébration familiale. C'est pourquoi nous nous engageons à rendre chaque moment unique et mémorable.</p>
                     <p>Notre équipe pluridisciplinaire maîtrise tous les aspects de l'organisation événementielle, de la location d'espaces à l'accompagnement personnalisé, en passant par les services de transport et d'hébergement.</p>
                     <a href="#contact" class="btn">Travaillons ensemble</a>
@@ -934,7 +963,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Élite Prestation</h3>
+                    <h3>ÉLITE PRESTATION</h3>
                     <p>Votre partenaire événementiel de confiance au Gabon pour des événements mémorables et réussis.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -970,7 +999,7 @@
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Votre email" required>
                         </div>
-                        <button type="submit" class="btn">S'abonner</button>
+                        <button type="submit" class="btn" style="background: var(--secondary); color: var(--primary);">S'abonner</button>
                     </form>
                 </div>
             </div>
