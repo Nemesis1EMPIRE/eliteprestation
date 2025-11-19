@@ -375,10 +375,11 @@
             background-color: var(--light);
         }
         
-        .testimonial-slider {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
         
         .testimonial {
@@ -387,6 +388,12 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             text-align: center;
             border: 1px solid var(--light-gray);
+            transition: var(--transition);
+        }
+        
+        .testimonial:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
         
         .client-img {
@@ -407,11 +414,18 @@
         .client-name {
             font-weight: 600;
             margin-top: 15px;
+            font-size: 1.1rem;
         }
         
         .client-role {
             color: var(--gray);
             font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin: 10px 0;
         }
         
         /* Contact Section */
@@ -578,6 +592,10 @@
             
             .about-img {
                 order: -1;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
             }
         }
         
@@ -809,7 +827,7 @@
                             <li>Service personnalisé</li>
                         </ul>
                         <div class="service-cta">
-                            <a href="#contact" class="btn btn-outline">Organiser mon séjour au Gabon</a>
+                            <a href="#contact" class="btn btn-outline">Organiser mon transport</a>
                         </div>
                     </div>
                 </div>
@@ -826,21 +844,42 @@
                     <img src="https://images.unsplash.com/photo-1464366400600-716a6dc8d5e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Mariage élégant" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Mariage Prestige</h3>
-                        <p>Organisation complète d'un mariage haut de gamme</p>
+                        <p>Organisation complète d'un mariage haut de gamme pour 150 invités</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Événement d'entreprise" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Séminaire Corporate</h3>
-                        <p>Organisation d'un séminaire d'entreprise avec protocole</p>
+                        <p>Organisation d'un séminaire d'entreprise avec protocole pour 200 participants</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Anniversaire" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Anniversaire Sur Mesure</h3>
-                        <p>Célébration d'anniversaire dans notre salle événementielle</p>
+                        <p>Célébration d'anniversaire dans notre salle événementielle pour 80 personnes</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1948&q=80" alt="Lancement de produit" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Lancement de Produit</h3>
+                        <p>Événement de lancement avec démonstration et cocktail pour 120 invités</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Conférence internationale" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Conférence Internationale</h3>
+                        <p>Organisation complète avec traduction simultanée pour 300 délégués</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Cérémonie de remise de prix" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Cérémonie de Prix</h3>
+                        <p>Gala de remise de prix avec dîner et animation pour 250 personnes</p>
                     </div>
                 </div>
             </div>
@@ -869,15 +908,102 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2>Témoignages</h2>
-            <div class="testimonial-slider">
+            <h2>Témoignages Clients</h2>
+            <div class="testimonials-grid">
                 <div class="testimonial">
                     <div class="client-img">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
                     </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
                     <p>"Élite Prestation a transformé notre mariage en un rêve éveillé. Leur attention aux détails et leur professionnalisme ont dépassé toutes nos attentes. Merci pour cette journée parfaite!"</p>
                     <div class="client-name">Sophie Martin</div>
                     <div class="client-role">Mariée</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Pour notre séminaire annuel, Élite Prestation a fait un travail remarquable. La logistique, l'accueil, tout était parfait. Nos collaborateurs étaient ravis de l'organisation."</p>
+                    <div class="client-name">David N'Goma</div>
+                    <div class="client-role">Directeur Commercial</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"L'appartement meublé était parfait pour nos invités étrangers. Propre, sécurisé et bien équipé. Le service d'accueil à l'aéroport a été très apprécié."</p>
+                    <div class="client-name">Marie-Louise Bongo</div>
+                    <div class="client-role">Responsable Événements</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Le service traiteur et l'organisation de notre cocktail d'entreprise étaient impeccables. Les invités ont adoré l'ambiance et la qualité du service."</p>
+                    <div class="client-name">Jean Mba</div>
+                    <div class="client-role">Entrepreneur</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Pour les 50 ans de mon père, Élite Prestation a créé une fête magique. La décoration, l'animation, tout était parfait. Merci pour ce moment inoubliable!"</p>
+                    <div class="client-name">Chantal Ondo</div>
+                    <div class="client-role">Particulière</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Service de nettoyage professionnel après notre événement. La salle était impeccable en un temps record. Je recommande vivement!"</p>
+                    <div class="client-name">Pierre Meye</div>
+                    <div class="client-role">Organisateur d'événements</div>
                 </div>
             </div>
         </div>
