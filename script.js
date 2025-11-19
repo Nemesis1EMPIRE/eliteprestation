@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const whatsappForm = document.getElementById('whatsappForm');
   
   // Numéro de téléphone WhatsApp (remplace par ton numéro)
-  const whatsappNumber = '24162391121'; // Sans le +
+  const whatsappNumber = '24177023004'; // Sans le +
   
   whatsappForm.addEventListener('submit', function(e) {
     e.preventDefault();
