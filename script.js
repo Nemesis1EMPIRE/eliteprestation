@@ -369,3 +369,128 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Swipe horizontal pour desktop
+document.addEventListener('DOMContentLoaded', function() {
+  // Fonction pour initialiser le swipe horizontal
+  function initHorizontalSwipe(sectionClass, containerClass, itemWidth) {
+    const sections = document.querySelectorAll(sectionClass);
+    
+    sections.forEach(section => {
+      const container = section.querySelector(containerClass);
+      if (!container) return;
+      
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+      
+      // Événements souris
+      container.addEventListener('mousedown', (e) => {
+        isDown = true;
+        section.classList.add('active');
+        startX = e.pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      
+      container.addEventListener('mouseleave', () => {
+        isDown = false;
+        section.classList.remove('active');
+      });
+      
+      container.addEventListener('mouseup', () => {
+        isDown = false;
+        section.classList.remove('active');
+      });
+      
+      container.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+      });
+      
+      // Événements tactiles
+      container.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - container.offsetLeft;
+        scrollLeft = container.scrollLeft;
+      });
+      
+      container.addEventListener('touchend', () => {
+        isDown = false;
+      });
+      
+      container.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - container.offsetLeft;
+        const walk = (x - startX) * 2;
+        container.scrollLeft = scrollLeft - walk;
+      });
+      
+      // Navigation par boutons
+      const prevBtn = section.querySelector('.swipe-nav--prev');
+      const nextBtn = section.querySelector('.swipe-nav--next');
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          container.scrollBy({ left: -itemWidth, behavior: 'smooth' });
+        });
+      }
+      
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+        });
+      }
+    });
+  }
+  
+  // Initialiser le swipe pour différentes sections
+  if (window.innerWidth >= 1024) {
+    // Services
+    initHorizontalSwipe('.services--swipeable', '.services__grid', 400);
+    
+    // Portfolio
+    initHorizontalSwipe('.portfolio--swipeable', '.swipe-wrapper', 420);
+    
+    // Spots
+    initHorizontalSwipe('.about__spots', '.swiper-wrapper', 370);
+    
+    // About info
+    initHorizontalSwipe('.about__info--swipeable', '.about__info', 220);
+    
+    // Contact informations
+    initHorizontalSwipe('.contact__informations--swipeable', '.contact__informations', 300);
+  }
+  
+  // Navigation mobile (existant)
+  const navToggle = document.querySelector('.nav__toggle');
+  const navClose = document.querySelector('.nav__close');
+  const navMenu = document.querySelector('.nav__menu');
+  const navOverlay = document.querySelector('.nav__overlay');
+  
+  if (navToggle && navMenu) {
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.add('show-menu');
+      navOverlay.classList.add('show-overlay');
+      document.body.style.overflow = 'hidden';
+    });
+    
+    function closeMenu() {
+      navMenu.classList.remove('show-menu');
+      navOverlay.classList.remove('show-overlay');
+      document.body.style.overflow = '';
+    }
+    
+    if (navClose) navClose.addEventListener('click', closeMenu);
+    if (navOverlay) navOverlay.addEventListener('click', closeMenu);
+    
+    const navLinks = document.querySelectorAll('.nav__link');
+    navLinks.forEach(link => link.addEventListener('click', closeMenu));
+    
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+});
