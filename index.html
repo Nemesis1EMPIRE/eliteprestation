@@ -6,6 +6,155 @@
     <title>Élite Prestation | Votre Agence Événementielle au Gabon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Splash Screen Styles */
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        #splash-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .splash-content {
+            text-align: center;
+            color: white;
+        }
+
+        .main-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .elite {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 0;
+            transform: translateY(-100vh);
+            opacity: 0;
+            animation: slideFromTop 1s ease forwards 0.5s;
+        }
+
+        .prestations {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-top: -10px;
+            transform: translateY(100vh);
+            opacity: 0;
+            animation: slideFromBottom 1s ease forwards 0.5s;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 2s;
+        }
+
+        .explosion-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            animation: explode 1s ease forwards 3s;
+        }
+
+        .explosion-piece {
+            position: absolute;
+            font-size: 2rem;
+            font-weight: 800;
+            opacity: 0;
+        }
+
+        .piece-1 { animation: piece1 1s ease forwards 3s; }
+        .piece-2 { animation: piece2 1s ease forwards 3s; }
+        .piece-3 { animation: piece3 1s ease forwards 3s; }
+        .piece-4 { animation: piece4 1s ease forwards 3s; }
+        .piece-5 { animation: piece5 1s ease forwards 3s; }
+        .piece-6 { animation: piece6 1s ease forwards 3s; }
+
+        @keyframes slideFromTop {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideFromBottom {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.5);
+            }
+        }
+
+        @keyframes piece1 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(-100px, -100px) rotate(-180deg); opacity: 0; }
+        }
+
+        @keyframes piece2 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(100px, -100px) rotate(180deg); opacity: 0; }
+        }
+
+        @keyframes piece3 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(-150px, 0) rotate(-270deg); opacity: 0; }
+        }
+
+        @keyframes piece4 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(150px, 0) rotate(270deg); opacity: 0; }
+        }
+
+        @keyframes piece5 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(-100px, 100px) rotate(-360deg); opacity: 0; }
+        }
+
+        @keyframes piece6 {
+            0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+            100% { transform: translate(100px, 100px) rotate(360deg); opacity: 0; }
+        }
+
         /* Variables et styles de base - Noir et Blanc */
         :root {
             --primary: #000000;
@@ -32,6 +181,14 @@
             line-height: 1.6;
             color: var(--primary);
             background-color: var(--secondary);
+            opacity: 0;
+            animation: bodyFadeIn 0.5s ease forwards 4s;
+        }
+
+        @keyframes bodyFadeIn {
+            to {
+                opacity: 1;
+            }
         }
         
         .container {
@@ -597,6 +754,18 @@
             .testimonials-grid {
                 grid-template-columns: 1fr;
             }
+
+            .elite {
+                font-size: 3rem;
+            }
+
+            .prestations {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.5rem;
+            }
         }
         
         @media (max-width: 768px) {
@@ -637,6 +806,18 @@
             .hero p {
                 font-size: 1rem;
             }
+
+            .elite {
+                font-size: 2.5rem;
+            }
+
+            .prestations {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -655,10 +836,41 @@
             .services-grid, .portfolio-grid {
                 grid-template-columns: 1fr;
             }
+
+            .elite {
+                font-size: 2rem;
+            }
+
+            .prestations {
+                font-size: 1.6rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <div class="splash-content">
+            <div class="main-title">
+                <div class="elite">Elite</div>
+                <div class="prestations">Prestations</div>
+            </div>
+            <div class="subtitle">Le Meilleur Pour Vous</div>
+        </div>
+        <div class="explosion-container">
+            <div class="explosion-piece piece-1">E</div>
+            <div class="explosion-piece piece-2">l</div>
+            <div class="explosion-piece piece-3">i</div>
+            <div class="explosion-piece piece-4">t</div>
+            <div class="explosion-piece piece-5">e</div>
+            <div class="explosion-piece piece-6">!</div>
+        </div>
+    </div>
+
     <!-- Header -->
     <header id="header">
         <div class="container">
@@ -1136,6 +1348,16 @@
     </footer>
 
     <script>
+        // Splash Screen Animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            
+            // Hide splash screen after animations complete
+            setTimeout(() => {
+                splashScreen.classList.add('fade-out');
+            }, 4000); // Total animation duration
+        });
+
         // Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
