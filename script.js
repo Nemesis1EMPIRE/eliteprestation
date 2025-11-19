@@ -575,3 +575,10 @@ document.addEventListener('keydown', (e) => {
     closeMenu();
   }
 });
+
+var swiper = new Swiper('.spots-swiper-container', {
+  direction: 'vertical',
+  slidesPerView: 1,
+  spaceBetween: 20,
+  mousewheel: true,
+});
