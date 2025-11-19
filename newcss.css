@@ -72,11 +72,25 @@ body {
     display: none !important;
 }
 
-.about__spots .swiper-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* espace entre les cartes */
+.about__spots {
+  overflow-x: auto;      /* active le défilement horizontal */
+  white-space: nowrap;   /* empêche les retours à la ligne */
+  padding-bottom: 10px;  /* espace sous la barre de scroll */
 }
+
+/* le wrapper doit aligner les cards sur une ligne */
+.spots-swiper-container .swiper-wrapper {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;             /* espace entre les cartes */
+}
+
+/* chaque card garde sa taille */
+.spot__card {
+  flex: 0 0 auto;        /* empêche de se réduire ou passer à la ligne */
+  width: 280px;          /* largeur de chaque spot (tu peux changer) */
+}
+
 
 .spot__card {
   width: 100%;       /* occupe toute la largeur */
