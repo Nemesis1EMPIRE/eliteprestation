@@ -72,26 +72,22 @@ body {
     display: none !important;
 }
 
-.vertical-scroll {
-  max-height: 400px;   
-  overflow-y: auto;    
-  overflow-x: hidden;
-  padding-right: 10px;
+.about__spots .swiper-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* espace entre les cartes */
 }
 
-/* Optionnel : style de la barre, en respectant ton bleu foncé */
-.vertical-scroll::-webkit-scrollbar {
-  width: 8px;
+.spot__card {
+  width: 100%;       /* occupe toute la largeur */
+  max-width: 400px;  /* optionnel */
+  margin: 0 auto;    /* centre la colonne */
 }
 
-.vertical-scroll::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.2);
+.spots-swiper-container {
+  height: 600px;  /* ou ce que tu veux */
 }
 
-.vertical-scroll::-webkit-scrollbar-thumb {
-  background: #0a2342;  /* ton bleu foncé */
-  border-radius: 4px;
-}
 
 /* Curseur personnalisé pour le swipe */
 body.swipe-mode {
