@@ -18,6 +18,13 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        #splash-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
         }
 
         .splash-content {
@@ -37,6 +44,7 @@
             font-weight: 800;
             margin-bottom: 0;
             transform: translateY(-100vh);
+            opacity: 0;
             animation: slideFromTop 1s ease forwards 0.5s;
         }
 
@@ -45,6 +53,7 @@
             font-weight: 600;
             margin-top: -10px;
             transform: translateY(100vh);
+            opacity: 0;
             animation: slideFromBottom 1s ease forwards 0.5s;
         }
 
@@ -70,7 +79,6 @@
             position: absolute;
             font-size: 2rem;
             font-weight: 800;
-            color: white;
             opacity: 0;
         }
 
@@ -84,12 +92,14 @@
         @keyframes slideFromTop {
             to {
                 transform: translateY(0);
+                opacity: 1;
             }
         }
 
         @keyframes slideFromBottom {
             to {
                 transform: translateY(0);
+                opacity: 1;
             }
         }
 
@@ -179,15 +189,6 @@
             to {
                 opacity: 1;
             }
-        }
-
-        /* Cache le contenu principal pendant l'animation */
-        .main-content {
-            opacity: 0;
-        }
-
-        body.loaded .main-content {
-            opacity: 1;
         }
         
         .container {
@@ -870,107 +871,507 @@
         </div>
     </div>
 
-    <!-- Contenu principal -->
-    <div class="main-content">
-        <!-- Header -->
-        <header id="header">
-            <div class="container">
-                <nav class="navbar">
-                    <a href="#" class="logo">ÉLITE PRESTATION</a>
-                    <ul class="nav-links">
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">ÉLITE PRESTATION</a>
+                <ul class="nav-links">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Réalisations</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Élégance & Professionnalisme</h1>
+                <p>Élite Prestation, l'excellence événementielle au Gabon. De la location de salle à l'organisation complète, nous créons des moments d'exception.</p>
+                <a href="#contact" class="btn">Planifier mon événement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Nos Services Complets</h2>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Location de Salle Événementielle</h3>
+                        <p>Une salle spacieuse et modulable d'une capacité de 200 places, idéale pour tous vos événements.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Mariages</span>
+                            <span class="service-tag">Séminaires</span>
+                            <span class="service-tag">Anniversaires</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Capacité : 200 personnes</li>
+                            <li>Espace modulable selon vos besoins</li>
+                            <li>Équipement de base inclus</li>
+                            <li>Localisation stratégique</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Réserver la salle</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1464366400600-716a6dc8d5e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Organisation de Mariages</h3>
+                        <p>Service complet ou à la carte pour un mariage personnalisé selon vos souhaits et votre budget.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Complet</span>
+                            <span class="service-tag">Sur mesure</span>
+                            <span class="service-tag">À la carte</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Matériel (sono, décoration, etc.)</li>
+                            <li>Service traiteur</li>
+                            <li>Photographie et vidéo</li>
+                            <li>Personnel dédié</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Organiser mon mariage</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1555854871-d4b4fe7fa0e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Appartement Meublé</h3>
+                        <p>Chambre nuptiale ou hébergement confortable avec toutes les commodités pour vos invités.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Chambre nuptiale</span>
+                            <span class="service-tag">Hébergement</span>
+                            <span class="service-tag">Confort</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Salon, chambre, douche, cuisine</li>
+                            <li>WiFi haut débit</li>
+                            <li>Accès sécurisé 24h/24</li>
+                            <li>Idéal pour mariages et séjours</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Réserver l'appartement</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Service de Nettoyage</h3>
+                        <p>Nettoyage professionnel avant et après vos événements pour des espaces impeccables.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Avant événement</span>
+                            <span class="service-tag">Après événement</span>
+                            <span class="service-tag">Professionnel</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Nettoyage avant événement</li>
+                            <li>Nettoyage après événement</li>
+                            <li>Produits professionnels</li>
+                            <li>Équipe qualifiée</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1551833086-7d1d0b9c6155?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Services Professionnels</h3>
+                        <p>Accueil, protocole et restauration pour vos événements d'entreprise et culturels.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Entreprise</span>
+                            <span class="service-tag">Culturel</span>
+                            <span class="service-tag">Professionnel</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Protocole et accueil</li>
+                            <li>Service pause-café</li>
+                            <li>Service café pour enterrement</li>
+                            <li>Personnel qualifié</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Personnaliser mon service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Transport & Accompagnement</h3>
+                        <p>Solutions de transport et services d'accompagnement pour tous vos déplacements.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Transport</span>
+                            <span class="service-tag">Accueil aéroport</span>
+                            <span class="service-tag">Accompagnement</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Transport (bus, véhicules)</li>
+                            <li>Accueil à l'aéroport</li>
+                            <li>Accompagnement événementiel</li>
+                            <li>Service personnalisé</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Organiser mon transport</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Nos Réalisations</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1464366400600-716a6dc8d5e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Mariage élégant" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Mariage Prestige</h3>
+                        <p>Organisation complète d'un mariage haut de gamme pour 150 invités</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Événement d'entreprise" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Séminaire Corporate</h3>
+                        <p>Organisation d'un séminaire d'entreprise avec protocole pour 200 participants</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Anniversaire" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Anniversaire Sur Mesure</h3>
+                        <p>Célébration d'anniversaire dans notre salle événementielle pour 80 personnes</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1948&q=80" alt="Lancement de produit" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Lancement de Produit</h3>
+                        <p>Événement de lancement avec démonstration et cocktail pour 120 invités</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Conférence internationale" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Conférence Internationale</h3>
+                        <p>Organisation complète avec traduction simultanée pour 300 délégués</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Cérémonie de remise de prix" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <h3>Cérémonie de Prix</h3>
+                        <p>Gala de remise de prix avec dîner et animation pour 250 personnes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>À Propos de Nous</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Élite Prestation, l'Excellence Événementielle</h3>
+                    <p>Forte de plusieurs années d'expérience, Élite Prestation s'est imposée comme la référence en matière d'organisation événementielle au Gabon. Notre approche allie élégance, professionnalisme et attention aux détails.</p>
+                    <p>Nous comprenons l'importance de chaque événement dans votre vie, qu'il s'agisse d'un mariage, d'un séminaire professionnel ou d'une célébration familiale. C'est pourquoi nous nous engageons à rendre chaque moment unique et mémorable.</p>
+                    <p>Notre équipe pluridisciplinaire maîtrise tous les aspects de l'organisation événementielle, de la location d'espaces à l'accompagnement personnalisé, en passant par les services de transport et d'hébergement.</p>
+                    <a href="#contact" class="btn">Travaillons ensemble</a>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Équipe Élite Prestation">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Témoignages Clients</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Élite Prestation a transformé notre mariage en un rêve éveillé. Leur attention aux détails et leur professionnalisme ont dépassé toutes nos attentes. Merci pour cette journée parfaite!"</p>
+                    <div class="client-name">Sophie Martin</div>
+                    <div class="client-role">Mariée</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Pour notre séminaire annuel, Élite Prestation a fait un travail remarquable. La logistique, l'accueil, tout était parfait. Nos collaborateurs étaient ravis de l'organisation."</p>
+                    <div class="client-name">David N'Goma</div>
+                    <div class="client-role">Directeur Commercial</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"L'appartement meublé était parfait pour nos invités étrangers. Propre, sécurisé et bien équipé. Le service d'accueil à l'aéroport a été très apprécié."</p>
+                    <div class="client-name">Marie-Louise Bongo</div>
+                    <div class="client-role">Responsable Événements</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Le service traiteur et l'organisation de notre cocktail d'entreprise étaient impeccables. Les invités ont adoré l'ambiance et la qualité du service."</p>
+                    <div class="client-name">Jean Mba</div>
+                    <div class="client-role">Entrepreneur</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/women/26.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Pour les 50 ans de mon père, Élite Prestation a créé une fête magique. La décoration, l'animation, tout était parfait. Merci pour ce moment inoubliable!"</p>
+                    <div class="client-name">Chantal Ondo</div>
+                    <div class="client-role">Particulière</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="client-img">
+                        <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Client">
+                    </div>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Service de nettoyage professionnel après notre événement. La salle était impeccable en un temps record. Je recommande vivement!"</p>
+                    <div class="client-name">Pierre Meye</div>
+                    <div class="client-role">Organisateur d'événements</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contactez-Nous</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Notre Adresse</h3>
+                            <p>Libreville, Gabon</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Téléphone</h3>
+                            <p>+241 XX XX XX XX</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>contact@eliteprestation.ga</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Heures d'Ouverture</h3>
+                            <p>Lun - Ven: 8h00 - 18h00<br>Samedi: 9h00 - 16h00<br>Dimanche: Sur rendez-vous</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Votre nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Votre email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Sujet" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">Service intéressé</option>
+                                <option value="salle">Location de salle</option>
+                                <option value="mariage">Organisation de mariage</option>
+                                <option value="appartement">Appartement meublé</option>
+                                <option value="nettoyage">Service de nettoyage</option>
+                                <option value="professionnel">Services professionnels</option>
+                                <option value="transport">Transport & Accompagnement</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Votre message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>ÉLITE PRESTATION</h3>
+                    <p>Votre partenaire événementiel de confiance au Gabon pour des événements mémorables et réussis.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens Rapides</h3>
+                    <ul class="footer-links">
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Réalisations</a></li>
                         <li><a href="#about">À propos</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
-                    <div class="menu-toggle">
-                        <i class="fas fa-bars"></i>
-                    </div>
-                </nav>
-            </div>
-        </header>
-
-        <!-- Hero Section -->
-        <section class="hero" id="accueil">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Élégance & Professionnalisme</h1>
-                    <p>Élite Prestation, l'excellence événementielle au Gabon. De la location de salle à l'organisation complète, nous créons des moments d'exception.</p>
-                    <a href="#contact" class="btn">Planifier mon événement</a>
                 </div>
-            </div>
-        </section>
-
-        <!-- Le reste de votre contenu... -->
-        <!-- Services Section -->
-        <section id="services">
-            <div class="container">
-                <h2>Nos Services Complets</h2>
-                <div class="services-grid">
-                    <!-- Vos services ici -->
-                    <div class="service-card">
-                        <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
-                        <div class="service-content">
-                            <h3>Location de Salle Événementielle</h3>
-                            <p>Une salle spacieuse et modulable d'une capacité de 200 places, idéale pour tous vos événements.</p>
-                            <div class="service-tags">
-                                <span class="service-tag">Mariages</span>
-                                <span class="service-tag">Séminaires</span>
-                                <span class="service-tag">Anniversaires</span>
-                            </div>
-                            <ul class="service-features">
-                                <li>Capacité : 200 personnes</li>
-                                <li>Espace modulable selon vos besoins</li>
-                                <li>Équipement de base inclus</li>
-                                <li>Localisation stratégique</li>
-                            </ul>
-                            <div class="service-cta">
-                                <a href="#contact" class="btn btn-outline">Réserver la salle</a>
-                            </div>
+                <div class="footer-column">
+                    <h3>Nos Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Location de salle</a></li>
+                        <li><a href="#">Organisation de mariages</a></li>
+                        <li><a href="#">Appartement meublé</a></li>
+                        <li><a href="#">Services de nettoyage</a></li>
+                        <li><a href="#">Transport & Accompagnement</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Newsletter</h3>
+                    <p>Abonnez-vous pour recevoir nos actualités et offres exclusives.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Votre email" required>
                         </div>
-                    </div>
-                    <!-- ... autres services ... -->
+                        <button type="submit" class="btn" style="background: var(--secondary); color: var(--primary);">S'abonner</button>
+                    </form>
                 </div>
             </div>
-        </section>
-
-        <!-- ... autres sections ... -->
-
-    </div>
+            <div class="copyright">
+                <p>&copy; 2023 Élite Prestation. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        // Animation du splash screen
+        // Splash Screen Animation
         document.addEventListener('DOMContentLoaded', function() {
             const splashScreen = document.getElementById('splash-screen');
-            const body = document.body;
             
-            console.log('Animation démarrée'); // Debug
-            
-            // Cache le splash screen après l'animation
+            // Hide splash screen after animations complete
             setTimeout(() => {
-                console.log('Cache le splash screen'); // Debug
-                splashScreen.style.display = 'none';
-                body.classList.add('loaded');
-            }, 4000); // 4 secondes pour l'animation complète
+                splashScreen.classList.add('fade-out');
+            }, 4000); // Total animation duration
         });
 
         // Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         
-        if (menuToggle) {
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        }
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
         
         // Header Scroll Effect
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
-            if (header && window.scrollY > 100) {
+            if (window.scrollY > 100) {
                 header.classList.add('scrolled');
-            } else if (header) {
+            } else {
                 header.classList.remove('scrolled');
             }
         });
@@ -991,9 +1392,7 @@
                     });
                     
                     // Close mobile menu if open
-                    if (navLinks) {
-                        navLinks.classList.remove('active');
-                    }
+                    navLinks.classList.remove('active');
                 }
             });
         });
