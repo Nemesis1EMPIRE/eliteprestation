@@ -1,17 +1,17 @@
-/*=============== GOOGLE FONTS ===============*/
+/*=============== GOOGLE FONTS ===============
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-  /*========== Colors ==========*/
-  --first-color: #1E0F1C; /* Maron foncé pour l'énergie événementielle */
-  --first-color-alt: #384454; /* Rouge plus foncé */
-  --title-color: #384454; /* Noir bleuté pour les titres */
-  --text-color: #8D99AE; /* Gris bleuté pour le texte */
-  --body-color: #F8F9FA; /* Fond très clair */
+  /*========== Colors ==========*
+  --first-color: #1E0F1C; /* Maron foncé pour l'énergie événementielle *
+  --first-color-alt: #384454; /* Rouge plus foncé *
+  --title-color: #384454; /* Noir bleuté pour les titres *
+  --text-color: #8D99AE; /* Gris bleuté pour le texte *
+  --body-color: #F8F9FA; /* Fond très clair *
   --container-color: #FFFFFF; /* Blanc pour les conteneurs */
   
-  /*========== Font and typography ==========*/
+  /*========== Font and typography ==========*
   --body-font: 'Poppins', sans-serif;
   --title-font: 'Playfair Display', serif;
   --big-font-size: 2rem;
@@ -22,12 +22,12 @@
   --small-font-size: .813rem;
   --smaller-font-size: .75rem;
 
-  /*========== Font weight ==========*/
+  /*========== Font weight ==========*
   --font-medium: 500;
   --font-semi-bold: 600;
   --font-bold: 700;
 
-  /*========== Margenes Bottom ==========*/
+  /*========== Margenes Bottom ==========*
   --mb-0-5: .5rem;
   --mb-0-75: .75rem;
   --mb-1: 1rem;
@@ -35,14 +35,14 @@
   --mb-2: 2rem;
   --mb-2-5: 2.5rem;
 
-  /*========== z index ==========*/
+  /*========== z index ==========*
   --z-tooltip: 10;
   --z-fixed: 100;
   --z-modal: 1000;
   --header-height: 3rem;
 }
 
-/*=============== BASE ===============*/
+/*=============== BASE ===============*
 * {
   margin: 0;
   padding: 0;
@@ -96,7 +96,7 @@ img {
   display: block;
 }
 
-/*=============== REUSABLE CSS CLASSES ===============*/
+/*=============== REUSABLE CSS CLASSES ===============*
 .section {
   padding: 5rem 0 2rem;
 }
@@ -131,7 +131,7 @@ img {
   font-size: var(--h3-font-size);
 }
 
-/*=============== LAYOUT ===============*/
+/*=============== LAYOUT ===============*
 .container {
   max-width: 1200px;
   margin-left: auto;
@@ -144,7 +144,7 @@ img {
   gap: 1.5rem;
 }
 
-/*=============== BUTTONS ===============*/
+/*=============== BUTTONS ===============*
 .button {
   display: inline-flex;
   align-items: center;
@@ -194,7 +194,7 @@ img {
   transform: none;
 }
 
-/*=============== HEADER & NAV ===============*/
+/*=============== HEADER & NAV ===============*
 .header {
   width: 100%;
   position: fixed;
@@ -255,7 +255,7 @@ img {
   margin-bottom: 0.25rem;
 }
 
-/* Active link */
+/* Active link *
 .active-link {
   color: var(--first-color);
 }
@@ -270,12 +270,12 @@ img {
   background-color: var(--first-color);
 }
 
-/* Change background header */
+/* Change background header *
 .scroll-header {
   box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
 }
 
-/*=============== VIDEO BACKGROUND ===============*/
+/*=============== VIDEO BACKGROUND ===============*
 .video-background {
   position: absolute;
   top: 0;
@@ -302,7 +302,7 @@ img {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/*=============== HOME ===============*/
+/*=============== HOME ===============*
 .home {
   position: relative;
   min-height: 100vh;
@@ -364,14 +364,14 @@ img {
   }
 }
 
-/*=============== ABOUT SECTION ===============*/
+/*=============== ABOUT SECTION ===============*
 .about__container {
   width: 100%;
   max-width: 100%;
   padding: 0;
 }
 
-/* Section vidéo pleine largeur */
+/* Section vidéo pleine largeur *
 .about__video-section {
   width: 100%;
   margin-bottom: 3rem;
@@ -410,7 +410,7 @@ img {
   pointer-events: none;
 }
 
-/* Section contenu */
+/* Section contenu *
 .about__content-section {
   width: 100%;
   max-width: 1200px;
@@ -463,7 +463,7 @@ img {
   line-height: 1.4;
 }
 
-/*=============== SPOTS SWIPER ===============*/
+/*=============== SPOTS SWIPER ===============*
 .about__spots {
   margin-top: 4rem;
   padding-top: 3rem;
@@ -554,7 +554,7 @@ img {
   margin: 0;
 }
 
-/* Navigation spots */
+/* Navigation spots *
 .spots-next,
 .spots-prev {
   color: var(--first-color);
@@ -588,7 +588,7 @@ img {
   transform: scale(1.2);
 }
 
-/*=============== SERVICES ===============*/
+/*=============== SERVICES ===============*
 .services {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
@@ -688,7 +688,7 @@ img {
   font-size: 1rem;
 }
 
-/*=============== PORTFOLIO ===============*/
+/*=============== PORTFOLIO ===============*
 .portfolio {
   background: var(--body-color);
   position: relative;
@@ -994,7 +994,7 @@ img {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/*=============== SCROLL UP ===============*/
+/*=============== SCROLL UP ===============*
 .scrollup {
   position: fixed;
   right: 1rem;
@@ -1022,14 +1022,14 @@ img {
   color: #FFF;
 }
 
-/* Show scroll */
+/* Show scroll *
 .show-scroll {
   bottom: 5rem;
 }
 
-/*=============== MEDIA QUERIES ===============*/
+/*=============== MEDIA QUERIES ===============*
 
-/* For small devices */
+/* For small devices *
 @media screen and (max-width: 350px) {
   .container {
     padding: 0 0.5rem;
@@ -1057,7 +1057,7 @@ img {
   }
 }
 
-/* For medium devices */
+/* For medium devices *
 @media screen and (max-width: 768px) {
   .section {
     padding: 4rem 0 1rem;
@@ -1128,7 +1128,7 @@ img {
     display: none;
   }
 
-  /* Optimisation vidéo mobile */
+  /* Optimisation vidéo mobile *
   .video-background video {
     display: block;
     playsinline: true;
@@ -1190,7 +1190,7 @@ img {
   }
 }
 
-/* For large devices */
+/* For large devices *
 @media screen and (min-width: 1024px) {
   .services__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1205,7 +1205,7 @@ img {
   }
 }
 
-/* Mode paysage mobile */
+/* Mode paysage mobile *
 @media screen and (max-height: 500px) and (orientation: landscape) {
   .home {
     min-height: 120vh;
@@ -1222,7 +1222,7 @@ img {
   }
 }
 
-/* Accessibilité */
+/* Accessibilité *
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
@@ -1235,7 +1235,7 @@ img {
   }
 }
 
-/* Focus states pour accessibilité */
+/* Focus states pour accessibilité *
 button:focus-visible,
 .button:focus-visible,
 .nav__link:focus-visible,
@@ -1244,7 +1244,7 @@ button:focus-visible,
   outline-offset: 2px;
 }
 
-/* Améliore le contraste tactile */
+/* Améliore le contraste tactile *
 @media (pointer: coarse) {
   .button, 
   .nav__link,
@@ -1255,4 +1255,4 @@ button:focus-visible,
     align-items: center;
     justify-content: center;
   }
-}
+}*/
