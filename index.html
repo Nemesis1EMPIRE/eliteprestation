@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Événia | Votre Agence Événementielle d'Excellence</title>
+    <title>Élite Prestation | Votre Agence Événementielle au Gabon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Variables et styles de base */
@@ -204,6 +204,9 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
         
         .service-card:hover {
@@ -219,11 +222,55 @@
         
         .service-content {
             padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .service-content h3 {
             font-size: 1.5rem;
             color: var(--primary);
+        }
+        
+        .service-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+        
+        .service-tag {
+            background: rgba(138, 79, 255, 0.1);
+            color: var(--primary);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin: 15px 0;
+            flex-grow: 1;
+        }
+        
+        .service-features li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .service-cta {
+            margin-top: auto;
+            text-align: center;
         }
         
         /* Portfolio Section */
@@ -569,11 +616,11 @@
     <header id="header">
         <div class="container">
             <nav class="navbar">
-                <a href="#" class="logo">Événia</a>
+                <a href="#" class="logo">Élite Prestation</a>
                 <ul class="nav-links">
                     <li><a href="#accueil">Accueil</a></li>
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#portfolio">Réalisations</a></li>
                     <li><a href="#about">À propos</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -588,9 +635,9 @@
     <section class="hero" id="accueil">
         <div class="container">
             <div class="hero-content">
-                <h1>Créons des moments inoubliables</h1>
-                <p>Notre agence événementielle transforme vos idées en expériences mémorables. De la conception à la réalisation, nous donnons vie à vos événements.</p>
-                <a href="#contact" class="btn">Planifier un événement</a>
+                <h1>Votre événement, notre expertise</h1>
+                <p>Élite Prestation, votre partenaire événementiel au Gabon. De la location de salle à l'organisation complète, nous transformons vos idées en moments inoubliables.</p>
+                <a href="#contact" class="btn">Planifier mon événement</a>
             </div>
         </div>
     </section>
@@ -598,30 +645,143 @@
     <!-- Services Section -->
     <section id="services">
         <div class="container">
-            <h2>Nos Services</h2>
+            <h2>Nos Services Complets</h2>
             <div class="services-grid">
+                <!-- Service 1 -->
                 <div class="service-card">
                     <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1519677100203-a0e668c92439?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
                     <div class="service-content">
-                        <h3>Mariages</h3>
-                        <p>Nous créons des mariages uniques qui reflètent votre personnalité et votre histoire d'amour, en veillant à chaque détail pour un jour parfait.</p>
-                        <a href="#" class="btn btn-outline">En savoir plus</a>
+                        <h3>Location de Salle Événementielle</h3>
+                        <p>Une salle spacieuse et modulable d'une capacité de 200 places, idéale pour tous vos événements.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Mariages</span>
+                            <span class="service-tag">Séminaires</span>
+                            <span class="service-tag">Anniversaires</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Capacité : 200 personnes</li>
+                            <li>Espace modulable selon vos besoins</li>
+                            <li>Équipement de base inclus</li>
+                            <li>Localisation stratégique</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Réserver la salle</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Service 2 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1464366400600-716a6dc8d5e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
                     <div class="service-content">
-                        <h3>Événements d'entreprise</h3>
-                        <p>De la planification de conférences aux soirées de gala, nous organisons des événements professionnels qui impressionnent et inspirent.</p>
-                        <a href="#" class="btn btn-outline">En savoir plus</a>
+                        <h3>Organisation de Mariages</h3>
+                        <p>Service complet ou à la carte pour un mariage personnalisé selon vos souhaits et votre budget.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Complet</span>
+                            <span class="service-tag">Sur mesure</span>
+                            <span class="service-tag">À la carte</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Matériel (sono, décoration, etc.)</li>
+                            <li>Service traiteur</li>
+                            <li>Photographie et vidéo</li>
+                            <li>Personnel dédié</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Organiser mon mariage</a>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Service 3 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1555854871-d4b4fe7fa0e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
                     <div class="service-content">
-                        <h3>Anniversaires & Fêtes</h3>
-                        <p>Des célébrations personnalisées pour marquer les moments spéciaux de la vie, dans une ambiance festive et chaleureuse.</p>
-                        <a href="#" class="btn btn-outline">En savoir plus</a>
+                        <h3>Appartement Meublé</h3>
+                        <p>Chambre nuptiale ou hébergement confortable avec toutes les commodités pour vos invités.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Chambre nuptiale</span>
+                            <span class="service-tag">Hébergement</span>
+                            <span class="service-tag">Confort</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Salon, chambre, douche, cuisine</li>
+                            <li>WiFi haut débit</li>
+                            <li>Accès sécurisé 24h/24</li>
+                            <li>Idéal pour mariages et séjours</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Réserver l'appartement</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Service de Nettoyage</h3>
+                        <p>Nettoyage professionnel avant et après vos événements pour des espaces impeccables.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Avant événement</span>
+                            <span class="service-tag">Après événement</span>
+                            <span class="service-tag">Professionnel</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Nettoyage avant événement</li>
+                            <li>Nettoyage après événement</li>
+                            <li>Produits professionnels</li>
+                            <li>Équipe qualifiée</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Demander un devis</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1551833086-7d1d0b9c6155?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Services Professionnels</h3>
+                        <p>Accueil, protocole et restauration pour vos événements d'entreprise et culturels.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Entreprise</span>
+                            <span class="service-tag">Culturel</span>
+                            <span class="service-tag">Professionnel</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Protocole et accueil</li>
+                            <li>Service pause-café</li>
+                            <li>Service café pour enterrement</li>
+                            <li>Personnel qualifié</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Personnaliser mon service</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card">
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="service-content">
+                        <h3>Transport & Accompagnement</h3>
+                        <p>Solutions de transport et services d'accompagnement pour tous vos déplacements.</p>
+                        <div class="service-tags">
+                            <span class="service-tag">Transport</span>
+                            <span class="service-tag">Accueil aéroport</span>
+                            <span class="service-tag">Accompagnement</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>Transport (bus, véhicules)</li>
+                            <li>Accueil à l'aéroport</li>
+                            <li>Accompagnement événementiel</li>
+                            <li>Service personnalisé</li>
+                        </ul>
+                        <div class="service-cta">
+                            <a href="#contact" class="btn btn-outline">Organiser mon transport</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -636,22 +796,22 @@
                 <div class="portfolio-item">
                     <img src="https://images.unsplash.com/photo-1464366400600-716a6dc8d5e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Mariage élégant" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Mariage Élégant</h3>
-                        <p>Une cérémonie romantique dans un cadre idyllique</p>
+                        <h3>Mariage Prestige</h3>
+                        <p>Organisation complète d'un mariage haut de gamme</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
                     <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Événement d'entreprise" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <h3>Lancement de Produit</h3>
-                        <p>Un événement corporate innovant et mémorable</p>
+                        <h3>Séminaire Corporate</h3>
+                        <p>Organisation d'un séminaire d'entreprise avec protocole</p>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Fête d'anniversaire" class="portfolio-img">
+                    <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Anniversaire" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3>Anniversaire Sur Mesure</h3>
-                        <p>Une célébration unique pour un moment spécial</p>
+                        <p>Célébration d'anniversaire dans notre salle événementielle</p>
                     </div>
                 </div>
             </div>
@@ -664,14 +824,14 @@
             <h2>À Propos de Nous</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Notre Passion, Votre Événement</h3>
-                    <p>Fondée en 2010, Événia est devenue une référence dans l'organisation d'événements en France. Notre équipe passionnée et créative s'engage à transformer vos visions en réalités exceptionnelles.</p>
-                    <p>Nous croyons que chaque événement est unique et mérite une attention particulière. De la planification initiale à la réalisation finale, nous nous assurons que chaque détail est parfaitement exécuté.</p>
-                    <p>Avec plus de 500 événements réussis à notre actif, nous avons l'expérience et l'expertise pour faire de votre occasion spéciale un souvenir inoubliable.</p>
+                    <h3>Élite Prestation, Votre Partenaire Événementiel au Gabon</h3>
+                    <p>Forte de plusieurs années d'expérience, Élite Prestation s'est imposée comme la référence en matière d'organisation événementielle au Gabon. Notre approche combine expertise locale et standards internationaux.</p>
+                    <p>Nous comprenons l'importance de chaque événement dans votre vie, qu'il s'agisse d'un mariage, d'un séminaire professionnel ou d'une célébration familiale. C'est pourquoi nous nous engageons à rendre chaque moment unique et mémorable.</p>
+                    <p>Notre équipe pluridisciplinaire maîtrise tous les aspects de l'organisation événementielle, de la location d'espaces à l'accompagnement personnalisé, en passant par les services de transport et d'hébergement.</p>
                     <a href="#contact" class="btn">Travaillons ensemble</a>
                 </div>
                 <div class="about-img">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Équipe Événia">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" alt="Équipe Élite Prestation">
                 </div>
             </div>
         </div>
@@ -686,7 +846,7 @@
                     <div class="client-img">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
                     </div>
-                    <p>"Événia a transformé notre mariage en un rêve éveillé. Leur attention aux détails et leur professionnalisme ont dépassé toutes nos attentes. Merci pour cette journée parfaite!"</p>
+                    <p>"Élite Prestation a transformé notre mariage en un rêve éveillé. Leur attention aux détails et leur professionnalisme ont dépassé toutes nos attentes. Merci pour cette journée parfaite!"</p>
                     <div class="client-name">Sophie Martin</div>
                     <div class="client-role">Mariée</div>
                 </div>
@@ -706,7 +866,7 @@
                         </div>
                         <div>
                             <h3>Notre Adresse</h3>
-                            <p>123 Avenue des Événements, 75008 Paris, France</p>
+                            <p>Libreville, Gabon</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -715,7 +875,7 @@
                         </div>
                         <div>
                             <h3>Téléphone</h3>
-                            <p>+33 1 23 45 67 89</p>
+                            <p>+241 XX XX XX XX</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -724,7 +884,7 @@
                         </div>
                         <div>
                             <h3>Email</h3>
-                            <p>contact@evenia.com</p>
+                            <p>contact@eliteprestation.ga</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -733,7 +893,7 @@
                         </div>
                         <div>
                             <h3>Heures d'Ouverture</h3>
-                            <p>Lun - Ven: 9h00 - 18h00<br>Samedi: 10h00 - 16h00</p>
+                            <p>Lun - Ven: 8h00 - 18h00<br>Samedi: 9h00 - 16h00<br>Dimanche: Sur rendez-vous</p>
                         </div>
                     </div>
                 </div>
@@ -747,6 +907,17 @@
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Sujet" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control" required>
+                                <option value="">Service intéressé</option>
+                                <option value="salle">Location de salle</option>
+                                <option value="mariage">Organisation de mariage</option>
+                                <option value="appartement">Appartement meublé</option>
+                                <option value="nettoyage">Service de nettoyage</option>
+                                <option value="professionnel">Services professionnels</option>
+                                <option value="transport">Transport & Accompagnement</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control" placeholder="Votre message" required></textarea>
@@ -763,11 +934,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Événia</h3>
-                    <p>Votre partenaire de confiance pour des événements mémorables et réussis.</p>
+                    <h3>Élite Prestation</h3>
+                    <p>Votre partenaire événementiel de confiance au Gabon pour des événements mémorables et réussis.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
@@ -777,7 +948,7 @@
                     <ul class="footer-links">
                         <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#portfolio">Réalisations</a></li>
                         <li><a href="#about">À propos</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -785,16 +956,16 @@
                 <div class="footer-column">
                     <h3>Nos Services</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Mariages</a></li>
-                        <li><a href="#">Événements d'entreprise</a></li>
-                        <li><a href="#">Anniversaires & Fêtes</a></li>
-                        <li><a href="#">Lancements de produits</a></li>
-                        <li><a href="#">Événements culturels</a></li>
+                        <li><a href="#">Location de salle</a></li>
+                        <li><a href="#">Organisation de mariages</a></li>
+                        <li><a href="#">Appartement meublé</a></li>
+                        <li><a href="#">Services de nettoyage</a></li>
+                        <li><a href="#">Transport & Accompagnement</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h3>Newsletter</h3>
-                    <p>Abonnez-vous à notre newsletter pour recevoir nos dernières actualités et offres.</p>
+                    <p>Abonnez-vous pour recevoir nos actualités et offres exclusives.</p>
                     <form>
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Votre email" required>
@@ -804,7 +975,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Événia. Tous droits réservés.</p>
+                <p>&copy; 2023 Élite Prestation. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
