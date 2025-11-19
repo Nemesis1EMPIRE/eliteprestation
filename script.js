@@ -539,3 +539,39 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Navigation mobile
+const navToggle = document.querySelector('.nav__toggle');
+const navClose = document.querySelector('.nav__close');
+const navMenu = document.querySelector('.nav__menu');
+const navOverlay = document.querySelector('.nav__overlay');
+
+// Ouvrir le menu
+navToggle.addEventListener('click', () => {
+  navMenu.classList.add('show-menu');
+  navOverlay.classList.add('show-overlay');
+  document.body.style.overflow = 'hidden';
+});
+
+// Fermer le menu
+function closeMenu() {
+  navMenu.classList.remove('show-menu');
+  navOverlay.classList.remove('show-overlay');
+  document.body.style.overflow = '';
+}
+
+navClose.addEventListener('click', closeMenu);
+navOverlay.addEventListener('click', closeMenu);
+
+// Fermer le menu en cliquant sur un lien
+const navLinks = document.querySelectorAll('.nav__link');
+navLinks.forEach(link => {
+  link.addEventListener('click', closeMenu);
+});
+
+// Échap pour fermer le menu
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeMenu();
+  }
+});
