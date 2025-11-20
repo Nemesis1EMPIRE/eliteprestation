@@ -585,6 +585,105 @@
             margin: 10px 0;
         }
         
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--secondary);
+        }
+
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+            filter: grayscale(100%);
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+            filter: grayscale(0%);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 20px;
+            text-align: center;
+            color: var(--secondary);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 5px 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
         /* Contact Section */
         .contact-content {
             display: grid;
@@ -766,6 +865,10 @@
             .subtitle {
                 font-size: 1.5rem;
             }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
         }
         
         @media (max-width: 768px) {
@@ -818,6 +921,15 @@
             .subtitle {
                 font-size: 1.2rem;
             }
+
+            .gallery-filters {
+                gap: 10px;
+            }
+
+            .filter-btn {
+                padding: 8px 15px;
+                font-size: 0.8rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -848,11 +960,15 @@
             .subtitle {
                 font-size: 1rem;
             }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Splash Screen 
+    <!-- Splash Screen -->
     <div id="splash-screen">
         <div class="splash-content">
             <div class="main-title">
@@ -869,7 +985,7 @@
             <div class="explosion-piece piece-5">e</div>
             <div class="explosion-piece piece-6">!</div>
         </div>
-    </div>-->
+    </div>
 
     <!-- Header -->
     <header id="header">
@@ -881,6 +997,7 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Réalisations</a></li>
                     <li><a href="#about">À propos</a></li>
+                    <li><a href="#gallery">Galerie</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
                 <div class="menu-toggle">
@@ -1221,6 +1338,86 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2>Galerie Photos</h2>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="mariage">Mariages</button>
+                <button class="filter-btn" data-filter="entreprise">Événements d'entreprise</button>
+                <button class="filter-btn" data-filter="anniversaire">Anniversaires</button>
+                <button class="filter-btn" data-filter="cocktail">Cocktails</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="mariage">
+                    <img src="assets/ELEGANT.jpg" alt="Mariage élégant" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Mariage Élégant</h3>
+                        <p>Cérémonie romantique avec décoration florale</p>
+                    </div>
+                    <div class="gallery-category">Mariage</div>
+                </div>
+                <div class="gallery-item" data-category="entreprise">
+                    <img src="assets/CONF.jpg" alt="Conférence d'entreprise" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Conférence Corporate</h3>
+                        <p>Séminaire professionnel avec équipement high-tech</p>
+                    </div>
+                    <div class="gallery-category">Entreprise</div>
+                </div>
+                <div class="gallery-item" data-category="anniversaire">
+                    <img src="assets/ANNIV.jpg" alt="Anniversaire festif" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Anniversaire Festif</h3>
+                        <p>Célébration avec décoration personnalisée</p>
+                    </div>
+                    <div class="gallery-category">Anniversaire</div>
+                </div>
+                <div class="gallery-item" data-category="cocktail">
+                    <img src="assets/ACCUEIL.jpg" alt="Cocktail d'entreprise" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Cocktail d'Entreprise</h3>
+                        <p>Réception avec service de qualité</p>
+                    </div>
+                    <div class="gallery-category">Cocktail</div>
+                </div>
+                <div class="gallery-item" data-category="mariage">
+                    <img src="assets/PRIX.jpg" alt="Dîner de gala" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Dîner de Gala</h3>
+                        <p>Soirée prestigieuse avec service traiteur</p>
+                    </div>
+                    <div class="gallery-category">Mariage</div>
+                </div>
+                <div class="gallery-item" data-category="entreprise">
+                    <img src="assets/AIRFRANCE.jpg" alt="Événement institutionnel" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Événement Institutionnel</h3>
+                        <p>Célébration des 90 ans d'Air France</p>
+                    </div>
+                    <div class="gallery-category">Entreprise</div>
+                </div>
+                <div class="gallery-item" data-category="cocktail">
+                    <img src="assets/service.png" alt="Réception cocktail" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Réception Cocktail</h3>
+                        <p>Service professionnel et ambiance chaleureuse</p>
+                    </div>
+                    <div class="gallery-category">Cocktail</div>
+                </div>
+                <div class="gallery-item" data-category="anniversaire">
+                    <img src="assets/mariage.png" alt="Fête familiale" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h3>Fête Familiale</h3>
+                        <p>Célébration conviviale et personnalisée</p>
+                    </div>
+                    <div class="gallery-category">Anniversaire</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -1317,6 +1514,7 @@
                         <li><a href="#services">Services</a></li>
                         <li><a href="#portfolio">Réalisations</a></li>
                         <li><a href="#about">À propos</a></li>
+                        <li><a href="#gallery">Galerie</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -1356,6 +1554,29 @@
             setTimeout(() => {
                 splashScreen.classList.add('fade-out');
             }, 4000); // Total animation duration
+
+            // Gallery Filtering
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    btn.classList.add('active');
+                    
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    galleryItems.forEach(item => {
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
         });
 
         // Menu Toggle
