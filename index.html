@@ -265,6 +265,17 @@
             background: var(--primary);
             color: var(--secondary);
         }
+
+        .btn-whatsapp {
+            background: #25D366;
+            border-color: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: transparent;
+            color: #25D366;
+        }
         
         /* Header et Navigation */
         header {
@@ -1012,7 +1023,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Élégance & Professionnalisme</h1>
-                <p>Élite Prestations, l'excellence événementielle au Gabon. De la location de salle à l'organisation complète, nous créons des moments d'exception.</p>
+                <p>Élite Prestation, l'excellence événementielle au Gabon. De la location de salle à l'organisation complète, nous créons des moments d'exception.</p>
                 <a href="#contact" class="btn">Planifier mon événement</a>
             </div>
         </div>
@@ -1140,7 +1151,7 @@
 
                 <!-- Service 6 -->
                 <div class="service-card">
-                    <div class="service-img" style="background-image: url('https://toyota-gabon.com/assets/imgs/coaster/vignette-coaster.png');"></div>
+                    <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');"></div>
                     <div class="service-content">
                         <h3>Transport & Accompagnement</h3>
                         <p>Solutions de transport et services d'accompagnement pour tous vos déplacements.</p>
@@ -1250,7 +1261,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Élite Prestation a transformé notre mariage en un rêve éveillé. Leur attention aux détails et leur professionnalisme ont dépassé toutes nos attentes. Merci pour cette journée parfaite!"</p>
+                    <p>"Élite Prestations a transformé notre mariage en un rêve éveillé. Leur attention aux détails et leur professionnalisme ont dépassé toutes nos attentes. Merci pour cette journée parfaite!"</p>
                     <div class="client-name">Sophie Martin</div>
                     <div class="client-role">Mariée</div>
                 </div>
@@ -1266,7 +1277,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Pour notre séminaire annuel, Élite Prestation a fait un travail remarquable. La logistique, l'accueil, tout était parfait. Nos collaborateurs étaient ravis de l'organisation."</p>
+                    <p>"Pour notre séminaire annuel, Élite Prestations a fait un travail remarquable. La logistique, l'accueil, tout était parfait. Nos collaborateurs étaient ravis de l'organisation."</p>
                     <div class="client-name">David N'Goma</div>
                     <div class="client-role">Directeur Commercial</div>
                 </div>
@@ -1314,7 +1325,7 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <p>"Pour les 50 ans de mon père, Élite Prestation a créé une fête magique. La décoration, l'animation, tout était parfait. Merci pour ce moment inoubliable!"</p>
+                    <p>"Pour les 50 ans de mon père, Élite Prestations a créé une fête magique. La décoration, l'animation, tout était parfait. Merci pour ce moment inoubliable!"</p>
                     <div class="client-name">Chantal Ondo</div>
                     <div class="client-role">Particulière</div>
                 </div>
@@ -1440,7 +1451,6 @@
                         <div>
                             <h3>Téléphone</h3>
                             <p>+241 62 39 11 21</p>
-                            <p>+241 77 02 30 04</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1454,6 +1464,15 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <p>Contactez-nous directement via WhatsApp</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
                             <i class="fas fa-clock"></i>
                         </div>
                         <div>
@@ -1463,31 +1482,33 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form id="whatsapp-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Votre nom" required>
+                            <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Votre email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Sujet" required>
+                            <input type="text" class="form-control" id="subject" placeholder="Sujet" required>
                         </div>
                         <div class="form-group">
-                            <select class="form-control" required>
+                            <select class="form-control" id="service" required>
                                 <option value="">Service intéressé</option>
-                                <option value="salle">Location de salle</option>
-                                <option value="mariage">Organisation de mariage</option>
-                                <option value="appartement">Appartement meublé</option>
-                                <option value="nettoyage">Service de nettoyage</option>
-                                <option value="professionnel">Services professionnels</option>
-                                <option value="transport">Transport & Accompagnement</option>
+                                <option value="Location de salle">Location de salle</option>
+                                <option value="Organisation de mariage">Organisation de mariage</option>
+                                <option value="Appartement meublé">Appartement meublé</option>
+                                <option value="Service de nettoyage">Service de nettoyage</option>
+                                <option value="Services professionnels">Services professionnels</option>
+                                <option value="Transport & Accompagnement">Transport & Accompagnement</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" placeholder="Votre message" required></textarea>
+                            <textarea class="form-control" id="message" placeholder="Votre message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Envoyer le message</button>
+                        <button type="submit" class="btn btn-whatsapp">
+                            <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1541,7 +1562,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 Élite Prestation. Tous droits réservés.</p>
+                <p>&copy; 2025 Élite Prestations. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -1577,6 +1598,51 @@
                         }
                     });
                 });
+            });
+
+            // WhatsApp Form Submission
+            document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Récupération des données du formulaire
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                
+                // Numéro de téléphone Élite Prestations (À MODIFIER)
+                const phoneNumber = "24162391121"; // Remplace par le vrai numéro
+                
+                // Construction du message formaté
+                const whatsappMessage = `
+*📞 NOUVELLE DEMANDE - ÉLITE PRESTATIONS*
+
+*👤 Nom complet:* ${name}
+*📧 Email:* ${email}
+*🎯 Sujet:* ${subject}
+*🛎️ Service demandé:* ${service}
+*💬 Message:*
+${message}
+
+*📍 Source:* Site web Elite Prestations
+*⏰ Date:* ${new Date().toLocaleString('fr-FR')}
+                `.trim();
+                
+                // Encodage du message pour URL
+                const encodedMessage = encodeURIComponent(whatsappMessage);
+                
+                // Création du lien WhatsApp
+                const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                
+                // Ouverture dans une nouvelle fenêtre
+                window.open(whatsappURL, '_blank');
+                
+                // Réinitialisation du formulaire
+                this.reset();
+                
+                // Message de confirmation
+                alert('✅ Formulaire envoyé! Redirection vers WhatsApp...');
             });
         });
 
